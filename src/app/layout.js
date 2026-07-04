@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import PreLoader from "@/components/preLoader";
 import Partners from "@/components/Partners";
 import Footer from "@/components/Footer";
 import NextTopLoader from "nextjs-toploader";
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
                     speed={200}
                     shadow="0 0 10px #ff3e3e,0 0 5px #ff3e3e"
                 />
+                <PreLoader />
                 <Navbar />
                 <main className="pt-20 md:pt-24 min-h-screen">
                     {children}
