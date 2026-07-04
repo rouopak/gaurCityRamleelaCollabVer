@@ -12,7 +12,8 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const isScrolled = window.scrollY > 10;
+            const threshold = pathname === "/" ? (window.innerHeight + 750) : 10;
+            const isScrolled = window.scrollY > threshold;
             setScrolled(isScrolled);
         };
 

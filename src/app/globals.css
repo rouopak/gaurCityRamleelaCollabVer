@@ -14,8 +14,7 @@
 
 html,
 body {
-    width: 100dvw;
-    overflow-x: hidden;
+    width: 100%;
     background-color: #fffaf0;
     color: #4d1700;
     scroll-behavior: smooth;
@@ -23,7 +22,7 @@ body {
 }
 
 section {
-    width: 100dvw;
+    width: 100%;
 }
 
 @theme {
@@ -476,7 +475,7 @@ section {
 
 /* marquee */
 .marquee {
-    width: 100dvw;
+    width: 100%;
     overflow: hidden;
     position: relative;
 }
@@ -552,4 +551,17 @@ section {
 
 .card:hover::before {
     opacity: 1;
+}
+
+@keyframes partners-marquee {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-33.333%, 0, 0);
+    }
+}
+
+.animate-marquee {
+    animation: partners-marquee 20s linear infinite;
 }
