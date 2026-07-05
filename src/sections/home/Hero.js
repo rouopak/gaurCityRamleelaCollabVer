@@ -33,30 +33,30 @@ const Hero = () => {
         });
 
         // 1. mainImg disappears
-        tl.fromTo(mainImgRef.current, 
-            { opacity: 1 }, 
-            { opacity: 0, duration: 1, ease: "power1.inOut" }, 
+        tl.fromTo(mainImgRef.current,
+            { opacity: 1 },
+            { opacity: 0, duration: 1, ease: "power1.inOut" },
             0
         );
-        
-        // 2. text scrolls to the top right and shrinks to fit the empty space beside the temple
-        tl.fromTo(textRef.current, 
-            { x: "0vw", y: "0vh", scale: 1 }, 
-            { x: "30vw", y: "-40vh", scale: 0.45, duration: 1, ease: "power1.inOut" }, 
+
+        // 2. text disappears (no motion)
+        tl.fromTo(textRef.current,
+            { opacity: 1 },
+            { opacity: 0, duration: 1, ease: "power1.inOut" },
             0
         );
-        
+
         // 3. layer2 scrolls up from the bottom (moves a bit higher/slower for parallax)
-        tl.fromTo(layer2Ref.current, 
-            { yPercent: 100 }, 
-            { yPercent: 40, duration: 1, ease: "power1.inOut" }, 
+        tl.fromTo(layer2Ref.current,
+            { yPercent: 100 },
+            { yPercent: 40, duration: 1, ease: "power1.inOut" },
             0
         );
-        
+
         // 4. layer1Top scrolls up from the bottom to cover most of the screen
-        tl.fromTo(layer1Ref.current, 
-            { yPercent: 100 }, 
-            { yPercent: 10, duration: 1, ease: "power1.inOut" }, 
+        tl.fromTo(layer1Ref.current,
+            { yPercent: 100 },
+            { yPercent: 10, duration: 1, ease: "power1.inOut" },
             0
         );
     }, { scope: containerRef });
@@ -70,25 +70,24 @@ const Hero = () => {
 
             {/* Layer 3 - Auto Parallax */}
             <motion.div
-                animate={{ x: [-20, 20, -20], y: [-15, 15, -15], scale: 1.05 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+                animate={{ y: [0, -12] }}
+                transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
                 className="absolute inset-0 z-10"
             >
                 <Image src="/images/Layer3.png" fill priority className="object-cover" alt="Mid Background" />
             </motion.div>
 
-            {/* Shadow Gradient for Text Contrast */}
-            <div className="absolute bottom-0 w-full h-[60vh] bg-gradient-to-t from-[#4d1700] via-[#4d1700]/60 to-transparent z-30 pointer-events-none" />
+
 
             {/* Main Content (Ram, Sita, Laxman & Text) */}
-            <div className="absolute inset-0 z-40 flex flex-col items-center justify-center pt-[15vh] md:pt-[20vh] px-5 pointer-events-none">
-                
-                <div ref={mainImgRef} className="relative w-full max-w-[400px] md:max-w-[450px] aspect-[4/3] flex items-center justify-center origin-center">
+            <div className="absolute inset-0 z-40 flex flex-col md:flex-row-reverse items-center justify-between pt-[12vh] md:pt-[10vh] px-6 md:px-12 lg:px-24 pointer-events-none">
+
+                <div ref={mainImgRef} className="relative w-full md:w-[56%] max-w-[750px] md:max-w-[850px] lg:max-w-[950px] aspect-[4/3] flex items-center justify-center origin-center mb-8 md:mb-0 shrink-0">
                     {/* Pulsing Glow behind main image - Intensified */}
                     <motion.div
                         animate={{ scale: [1, 1.25, 1], opacity: [0.6, 1, 0.6] }}
                         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute w-[85%] h-[85%] bg-[#ffb703] rounded-full blur-[50px] md:blur-[80px] z-0"
+                        className="absolute w-[85%] h-[85%] bg-[#fff3d4] rounded-full blur-[50px] md:blur-[80px] z-0"
                     />
                     {/* Floating mainImg */}
                     <motion.div
@@ -106,14 +105,33 @@ const Hero = () => {
                     </motion.div>
                 </div>
 
-                <div ref={textRef} className="text-center mt-4 z-20 px-4 origin-top">
-                    <h1 className="font-['var(--font-cinzel)',_serif] text-2xl md:text-4xl lg:text-5xl leading-tight font-extrabold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-b from-white via-[#f0f0f0] to-[#b0b0b0] drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
-                        Traditional Indian Performance <br className="hidden md:block" /> of Ramayan
+                <div ref={textRef} className="text-left z-20 w-full md:w-[48%] flex flex-col items-center md:items-start origin-center pointer-events-auto text-center md:text-left mt-[-20px] md:mt-0">
+
+                    {/* Subheading: KEEPING OUR HERITAGE ALIVE */}
+                    <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+                        <div className="h-[1px] w-6 md:w-10 bg-[#98221b]"></div>
+                        <span className="text-[#98221b] tracking-[0.25em] text-[10px] md:text-xs font-bold uppercase font-['var(--font-sans)']">
+                            Shree RamLeela Seva Trust
+                        </span>
+                        <div className="h-[1px] w-4 md:w-6 bg-[#98221b]"></div>
+                    </div>
+
+                    {/* Main Headings */}
+                    <h1 className="leading-tight font-bold tracking-wide w-full mb-6" style={{ fontFamily: "var(--font-cinzel), serif" }}>
+                        <span className="text-[#3b271a] block text-3xl md:text-4xl lg:text-[42px] mb-1 md:mb-2 drop-shadow-sm whitespace-nowrap">Traditional Indian</span>
+                        <span className="text-[#3b271a] block text-3xl md:text-4xl lg:text-[42px] mb-2 md:mb-4 drop-shadow-sm whitespace-nowrap">Performance of</span>
+                        <span className="text-[#830404] block text-4xl md:text-6xl lg:text-[90px] drop-shadow-sm"> Ramayan</span>
                     </h1>
-                    <h2 className="font-['var(--font-cinzel)',_serif] text-lg md:text-xl lg:text-2xl text-white italic mt-3 font-semibold tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                        Shree Ramleela Seva Trust
-                    </h2>
+
+                    {/* CTA Button */}
+                    <a href="/about" className="bg-[#811915] text-[#F5E9D2] px-6 py-3 md:px-8 md:py-3.5 rounded text-xs md:text-sm tracking-widest font-bold uppercase hover:bg-[#6b1411] transition-all duration-300 flex items-center gap-2 group shadow-lg">
+                        KNOW MORE
+                        <svg className="group-hover:translate-x-1 transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
                 </div>
+
             </div>
 
             {/* Layer 2 - Midground behind Layer 1 */}
