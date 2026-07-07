@@ -9,8 +9,13 @@ const landing = () => {
             <p className="text-xl md:text-2xl text-[#4d1700]/70 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Celebrating and preserving the divine saga of Ramayana through cultural devotion, community engagement, and spiritual events in Gaur City.
             </p>
+            <h2 className="text-xl md:text-2xl text-[#4d1700]/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+                <span>+91 96439 76677</span>
+                <br />
+                <span>shreeramleela.gnw@gmail.com</span>
+            </h2>
             <div className="flex gap-4 justify-center">
-                <a href="/prevEvent" className="px-6 py-3 bg-[#4d1700] text-[#fffaf0] rounded-lg font-semibold shadow hover:bg-[#4d1700]/90 transition duration-300">
+                <a href="#contact" className="px-6 py-3 bg-[#4d1700] text-[#fffaf0] rounded-lg font-semibold shadow hover:bg-[#4d1700]/90 transition duration-300">
                     Email Us
                 </a>
             </div>

@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { navLinks, pastEvents, socialLinks } from "../constants/index.js";
+import { footerLinks, pastEvents, socialLinks } from "../constants/index.js";
 
 const Footer = () => {
     const handleScrollToTop = () => {
@@ -40,7 +40,7 @@ const Footer = () => {
                 <div className="flex flex-col space-y-6">
                     <h4 className="text-lg md:text-xl font-bold uppercase tracking-wider text-[#fffaf0]">Useful Links</h4>
                     <ul className="flex flex-col space-y-3">
-                        {navLinks.map((link) => (
+                        {footerLinks.map((link) => (
                             <li key={link.name}>
                                 <Link
                                     href={link.link}

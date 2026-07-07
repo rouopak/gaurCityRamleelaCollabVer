@@ -79,7 +79,7 @@ const EmailUs = () => {
                                         name="message"
                                         value={form.message}
                                         onChange={handleChange}
-                                        placeholder="How can I help you?"
+                                        placeholder="How can We help you?"
                                         rows="5"
                                         className="w-full px-4 py-4 md:text-base text-sm placeholder:text-[#4d1700]/40 bg-[#fffaf0] border border-[#4d1700]/20 rounded-md text-[#4d1700] focus:outline-none focus:border-[#811915]/50 transition-colors resize-none"
                                         required
@@ -116,8 +116,8 @@ const EmailUs = () => {
                                 Thank you for getting in touch. Your message has been sent successfully. We will get back to you shortly.
                             </p>
                         </div>
-                        <button 
-                            onClick={() => setShowPopup(false)} 
+                        <button
+                            onClick={() => setShowPopup(false)}
                             className="contact-btn group w-full justify-center py-3 text-xs font-bold tracking-widest cursor-pointer"
                         >
                             <span>Close</span>

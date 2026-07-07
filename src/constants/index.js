@@ -20,6 +20,32 @@ const navLinks = [
         link: "/contact",
     },
 ];
+const footerLinks = [
+    {
+        name: "Past Events",
+        link: "/prevEvent",
+    },
+    {
+        name: "Members List",
+        link: "/members",
+    },
+    {
+        name: "Achivements",
+        link: "/achivement",
+    },
+    {
+        name: "Press Releases",
+        link: "/pressRelease",
+    },
+    {
+        name: "Contact Us",
+        link: "/contact",
+    },
+    {
+        name: "Admin",
+        link: "/admin",
+    },
+];
 const partners = [
     {
         name: "Dainik Jagran",
@@ -50,4 +76,4 @@ const socialLinks = [
     { name: "Instagram", link: "https://instagram.com", icon: "instagram" },
 ];
 
-export { navLinks, partners, pastEvents, socialLinks };
+export { navLinks, partners, pastEvents, socialLinks, footerLinks };

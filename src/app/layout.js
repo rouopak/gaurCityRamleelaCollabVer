@@ -5,6 +5,7 @@ import Partners from "@/components/Partners";
 import Footer from "@/components/Footer";
 import NextTopLoader from "nextjs-toploader";
 import { Cinzel, Yatra_One } from 'next/font/google';
+import { headers } from "next/headers";
 
 const cinzel = Cinzel({ 
     subsets: ['latin'],
@@ -25,7 +26,21 @@ export const metadata = {
     },
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+    const headersList = await headers();
+    const pathname = headersList.get("x-next-pathname") || headersList.get("x-invoke-path") || "";
+    const isAdmin = pathname.startsWith("/admin");
+
+    if (isAdmin) {
+        return (
+            <html lang="en" className={`${cinzel.variable} ${yatra.variable} scroll-smooth`}>
+                <body>
+                    {children}
+                </body>
+            </html>
+        );
+    }
+
     return (
         <html lang="en" className={`${cinzel.variable} ${yatra.variable} scroll-smooth`}>
             <body>
