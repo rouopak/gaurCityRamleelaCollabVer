@@ -6,8 +6,8 @@ import Footer from "@/components/Footer";
 import NextTopLoader from "nextjs-toploader";
 import { Cinzel, Yatra_One } from 'next/font/google';
 import { headers } from "next/headers";
-
-const cinzel = Cinzel({ 
+import SideBar from "@/components/SideBar";
+const cinzel = Cinzel({
     subsets: ['latin'],
     variable: '--font-cinzel',
 });
@@ -56,6 +56,7 @@ export default async function RootLayout({ children }) {
                     shadow="0 0 10px #ff3e3e,0 0 5px #ff3e3e"
                 />
                 <PreLoader />
+                <SideBar />
                 <Navbar />
                 <main className="pt-20 md:pt-24 min-h-screen">
                     {children}
