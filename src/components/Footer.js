@@ -23,11 +23,11 @@ const Footer = () => {
                 <div className="flex flex-col space-y-6">
                     <Link href="/">
                         <Image
-                            src="/images/temp_logo.png"
+                            src="/images/srst_logo.png"
                             alt="Shree RamLeela Seva Trust Logo"
                             width={120}
                             height={120}
-                            className="object-contain filter brightness-0 invert"
+                            className="object-none"
                             style={{ height: "auto" }}
                         />
                     </Link>

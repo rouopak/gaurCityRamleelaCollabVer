@@ -22,7 +22,7 @@ export const metadata = {
     title: "Shree RamLeela Seva Trust",
     description: "Gaur City RamLeela",
     icons: {
-        icon: "/images/temp_logo.png",
+        icon: "/images/srst_logo.png",
     },
 };
 

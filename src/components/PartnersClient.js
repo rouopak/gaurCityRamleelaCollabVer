@@ -34,20 +34,14 @@ const PartnersClient = ({ partners }) => {
                             key={`${partner.id}-${index}`}
                             className="flex items-center justify-center bg-white border border-[#4d1700]/5 shadow-sm rounded-xl px-8 py-4 h-16 w-36 md:w-44 transition-all duration-300 hover:scale-105 shrink-0"
                         >
-                            {partner.logo ? (
-                                <Image
-                                    src={partner.logo}
-                                    alt={partner.name}
-                                    width={120}
-                                    height={60}
-                                    className="object-contain max-h-10 w-auto filter grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                                    priority={index < 5}
-                                />
-                            ) : (
-                                <span className="font-bold text-[#4d1700]/50 uppercase tracking-wider text-xs text-center line-clamp-2">
-                                    {partner.name}
-                                </span>
-                            )}
+                            <Image
+                                src={partner.logo || "/images/srst_logo.png"}
+                                alt={partner.name}
+                                width={160}
+                                height={80}
+                                className="object-contain max-h-14 md:max-h-16 w-auto transition-all duration-300"
+                                priority={index < 5}
+                            />
                         </div>
                     ))}
                 </div>

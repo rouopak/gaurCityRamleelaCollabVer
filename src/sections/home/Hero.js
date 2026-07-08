@@ -13,12 +13,6 @@ if (typeof window !== "undefined") {
 }
 
 const Hero = () => {
-    // audio
-    const playClick = () => {
-        const audio = new Audio("/audio/jai-shree-ram.mp3");
-        audio.volume = 0.8;
-        audio.play();
-    };
     // Refs for GSAP
     const containerRef = useRef(null);
     const mainImgRef = useRef(null);
@@ -155,9 +149,12 @@ const Hero = () => {
                     </h1>
 
                     {/* CTA Button */}
-                    <button onClick={playClick} className="cta-btn bg-[#811915] text-[#F5E9D2] px-6 py-3 md:px-8 md:py-3.5 rounded text-xs md:text-sm tracking-widest font-bold uppercase hover:bg-[#6b1411] transition-all duration-300 flex items-center gap-2 group shadow-lg">
-                        Jai Shree Ram
-                    </button>
+                    <a href="https://www.youtube.com/@SRSTgnw/streams" target="_blank" rel="noopener noreferrer" className="cta-btn bg-[#811915] text-[#F5E9D2] px-6 py-3 md:px-8 md:py-3.5 rounded text-xs md:text-sm tracking-widest font-bold uppercase hover:bg-[#6b1411] transition-all duration-300 flex items-center gap-2 group shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                        </svg>
+                        Watch Live Stream
+                    </a>
                 </div>
 
             </div>

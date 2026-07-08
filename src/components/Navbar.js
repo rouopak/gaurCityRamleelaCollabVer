@@ -27,7 +27,7 @@ const Navbar = () => {
                 {/* Brand Logo & Text */}
                 <Link className="logo" href="/">
                     <Image
-                        src="/images/navbar_logo.png"
+                        src="/images/srst_logo.png"
                         alt="Shree RamLeela Seva Trust Logo"
                         width={100}
                         height={75}
