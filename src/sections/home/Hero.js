@@ -48,19 +48,21 @@ const Hero = () => {
             0
         );
 
-        // 3. title image shrinks by 50% and goes up by 50px
+        // 3. title image shrinks by 50% and goes up by 50px (only on desktop)
         const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-        tl.fromTo(titleRef.current,
-            { scale: 1, y: 0 },
-            {
-                scale: 0.5,
-                y: -50,
-                duration: 1,
-                ease: "power1.inOut",
-                transformOrigin: isMobile ? "center center" : "left center"
-            },
-            0
-        );
+        if (!isMobile) {
+            tl.fromTo(titleRef.current,
+                { scale: 1, y: 0 },
+                {
+                    scale: 0.5,
+                    y: -50,
+                    duration: 1,
+                    ease: "power1.inOut",
+                    transformOrigin: "left center"
+                },
+                0
+            );
+        }
 
         // 4. layer2 scrolls up from the bottom (moves a bit higher/slower for parallax)
         tl.fromTo(layer2Ref.current,
@@ -88,7 +90,7 @@ const Hero = () => {
             <motion.div
                 animate={{ y: [0, -12] }}
                 transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-                className="absolute inset-0 z-10"
+                className="absolute inset-0 z-10 hidden md:block"
             >
                 <Image src="/images/Layer3.png" fill priority className="object-cover" alt="Mid Background" />
             </motion.div>
@@ -96,9 +98,9 @@ const Hero = () => {
 
 
             {/* Main Content (Ram, Sita, Laxman & Text) */}
-            <div className="absolute inset-0 z-40 flex flex-col md:flex-row-reverse items-center justify-between pt-[12vh] md:pt-[10vh] px-6 md:px-12 lg:px-24 pointer-events-none">
+            <div className="absolute inset-0 z-40 flex flex-col md:flex-row-reverse items-center justify-center md:justify-between md:pt-[10vh] px-6 md:px-12 lg:px-24 pointer-events-none">
 
-                <div ref={mainImgRef} className="relative w-full md:w-[56%] max-w-[750px] md:max-w-[850px] lg:max-w-[950px] aspect-[4/3] flex items-center justify-center origin-center mb-8 md:mb-0 shrink-0">
+                <div ref={mainImgRef} className="hidden md:flex relative w-full md:w-[56%] max-w-[750px] md:max-w-[850px] lg:max-w-[950px] aspect-[4/3] items-center justify-center origin-center mb-8 md:mb-0 shrink-0">
                     {/* Pulsing Glow behind main image - Intensified */}
                     <motion.div
                         animate={{ scale: [1, 1.25, 1], opacity: [0.6, 1, 0.6] }}
@@ -121,7 +123,7 @@ const Hero = () => {
                     </motion.div>
                 </div>
 
-                <div ref={textRef} className="text-left z-20 w-full md:w-[48%] flex flex-col items-center md:items-start origin-center pointer-events-auto text-center md:text-left mt-[-20px] md:mt-0">
+                <div ref={textRef} className="text-left z-20 w-full md:w-[48%] flex flex-col items-center md:items-start origin-center pointer-events-auto text-center md:text-left mt-0">
 
                     {/* Subheading: KEEPING OUR HERITAGE ALIVE */}
                     <div className="subheading flex items-center justify-center md:justify-start gap-3 mb-4">
@@ -160,7 +162,7 @@ const Hero = () => {
             </div>
 
             {/* Layer 2 - Midground behind Layer 1 */}
-            <div ref={layer2Ref} className="absolute inset-0 z-[45] pointer-events-none">
+            <div ref={layer2Ref} className="absolute inset-0 z-[45] pointer-events-none hidden md:block">
                 <motion.div
                     animate={{ y: [-5, 5, -5] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}

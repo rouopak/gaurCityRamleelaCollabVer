@@ -8,22 +8,38 @@ import { navLinks } from "../constants/index.js";
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const pathname = usePathname();
 
     useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        setIsMobile(mediaQuery.matches);
+        const handleMediaQueryChange = (event) => setIsMobile(event.matches);
+        mediaQuery.addEventListener("change", handleMediaQueryChange);
+        return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    }, []);
+
+    useEffect(() => {
+        if (pathname !== "/") return;
+
         const handleScroll = () => {
-            const threshold = pathname === "/" ? (window.innerHeight + 750) : 10;
+            const threshold = window.innerHeight + 750;
             const isScrolled = window.scrollY > threshold;
             setScrolled(isScrolled);
         };
 
+        handleScroll();
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [pathname]);
+
+    if (isMobile) return null;
+
+    const headerClass = pathname === "/" ? (scrolled ? "scrolled" : "not-scrolled") : "scrolled";
 
     return (
-        <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
-            <div className="inner">
+        <header className={`navbar ${headerClass}`}>
+            <div className="inner flex justify-between items-center w-full">
                 {/* Brand Logo & Text */}
                 <Link className="logo" href="/">
                     <Image
@@ -38,7 +54,7 @@ const Navbar = () => {
                 </Link>
 
                 {/* Desktop Navigation Links */}
-                <nav className="desktop">
+                <nav className="desktop hidden md:block">
                     <ul>
                         {navLinks.map(({ link, name }) => {
                             const isActive = pathname === link || (link.startsWith("/#") && pathname === "/");
@@ -54,8 +70,8 @@ const Navbar = () => {
                     </ul>
                 </nav>
 
-                {/* Contact Button */}
-                <Link href="/donation" className="contact-btn group">
+                {/* Contact Button (Desktop) */}
+                <Link href="/donation" className="contact-btn group hidden md:flex">
                     <div className="inner">
                         <svg
                             className="lucide lucide-hand-heart button-icon"
