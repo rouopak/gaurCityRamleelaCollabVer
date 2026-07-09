@@ -80,9 +80,8 @@ export default function AdminSidebar() {
 
     return (
         <aside
-            className={`fixed left-0 top-0 h-screen z-50 flex flex-col transition-all duration-300 border-r border-[#F5E9D2]/10 ${
-                collapsed ? "w-[72px]" : "w-64"
-            }`}
+            className={`fixed left-0 top-0 h-screen z-50 flex flex-col transition-all duration-300 border-r border-[#F5E9D2]/10 ${collapsed ? "w-[72px]" : "w-64"
+                }`}
             style={{
                 background: "linear-gradient(180deg, #1a0a00 0%, #2d1400 100%)",
             }}
@@ -91,7 +90,7 @@ export default function AdminSidebar() {
             <div className="flex items-center gap-3 px-4 py-5 border-b border-[#F5E9D2]/10">
                 <div className="relative w-10 h-10 shrink-0">
                     <Image
-                        src="/images/temp_logo.png"
+                        src="/images/srst_logo.png"
                         fill
                         className="object-contain"
                         alt="Logo"
@@ -101,7 +100,7 @@ export default function AdminSidebar() {
                     <div className="overflow-hidden">
                         <h2 className="text-[#F5E9D2] font-bold text-sm truncate"
                             style={{ fontFamily: "var(--font-cinzel), serif" }}>
-                            RamLeela CMS
+                            Shree Ramleela Seva Trust
                         </h2>
                         <p className="text-[#F5E9D2]/40 text-[10px] truncate">
                             Admin Panel
@@ -116,11 +115,10 @@ export default function AdminSidebar() {
                     <Link
                         key={item.href}
                         href={item.href}
-                        className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 group ${
-                            isActive(item.href)
+                        className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 group ${isActive(item.href)
                                 ? "bg-[#b55924]/20 text-[#F5E9D2]"
                                 : "text-[#F5E9D2]/50 hover:text-[#F5E9D2]/80 hover:bg-[#F5E9D2]/5"
-                        }`}
+                            }`}
                     >
                         <span className={`shrink-0 ${isActive(item.href) ? "text-[#b55924]" : ""}`}>
                             {item.icon}
