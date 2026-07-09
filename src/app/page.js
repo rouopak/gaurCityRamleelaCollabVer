@@ -1,10 +1,19 @@
 import Hero from "@/sections/home/Hero";
-import Image from "next/image";
+import AboutUs from "@/sections/home/AboutUs";
+import ChooseUs from "@/sections/home/ChooseUs";
+import MainMembers from "@/sections/home/MainMembers";
+import Past4Events from "@/sections/home/Past4Events";
+import NoticeBoard from "@/sections/home/NoticeBoard";
 
 const Home = () => {
   return (
     <>
       <Hero />
+      <AboutUs />
+      <ChooseUs />
+      <MainMembers />
+      <Past4Events />
+      <NoticeBoard />
     </>
   );
 };
