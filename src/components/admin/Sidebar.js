@@ -116,8 +116,8 @@ export default function AdminSidebar() {
                         key={item.href}
                         href={item.href}
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 group ${isActive(item.href)
-                                ? "bg-[#b55924]/20 text-[#F5E9D2]"
-                                : "text-[#F5E9D2]/50 hover:text-[#F5E9D2]/80 hover:bg-[#F5E9D2]/5"
+                            ? "bg-[#b55924]/20 text-[#F5E9D2]"
+                            : "text-[#F5E9D2]/50 hover:text-[#F5E9D2]/80 hover:bg-[#F5E9D2]/5"
                             }`}
                     >
                         <span className={`shrink-0 ${isActive(item.href) ? "text-[#b55924]" : ""}`}>
