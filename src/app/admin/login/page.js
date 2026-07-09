@@ -59,13 +59,15 @@ export default function AdminLoginPage() {
             <div className="relative z-10 w-full max-w-md px-6">
                 {/* Logo / Header */}
                 <div className="text-center mb-8">
-                    <div className="relative w-20 h-20 mx-auto mb-4">
-                        <Image
-                            src="/images/srst_logo.png"
-                            fill
-                            className="object-contain"
-                            alt="Shree RamLeela Seva Trust"
-                        />
+                    <div className="relative w-20 h-20 mx-auto mb-4 hover:scale-105 transition-all duration-75">
+                        <Link className="logo" href="/">
+                            <Image
+                                src="/images/srst_logo.png"
+                                fill
+                                className="object-contain"
+                                alt="Shree RamLeela Seva Trust"
+                            />
+                        </Link>
                     </div>
                     <h1 className="text-2xl font-bold text-[#F5E9D2] tracking-wide"
                         style={{ fontFamily: "var(--font-cinzel), serif" }}>
