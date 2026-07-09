@@ -1,9 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import OMEx from "../../components/models/contact/OMEx"
 
+
 const EmailUs = () => {
+    const [isMobile, setIsMobile] = useState(false);
     const formRef = useRef(null);
     const [loading, setLoading] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
@@ -12,6 +14,13 @@ const EmailUs = () => {
         email: "",
         message: "",
     });
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        setIsMobile(mediaQuery.matches);
+        const handleMediaQueryChange = (event) => setIsMobile(event.matches);
+        mediaQuery.addEventListener("change", handleMediaQueryChange);
+        return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -92,11 +101,11 @@ const EmailUs = () => {
                             </form>
                         </div>
                     </div>
-                    <div className="xl:col-span-7 min-h-96">
+                    {!isMobile && <div className="xl:col-span-7 min-h-96">
                         <div className="bg-[#edd0a4] border border-[#4d1700]/15 w-full h-full hover:cursor-grab rounded-3xl overflow-hidden shadow-md">
                             <OMEx />
                         </div>
-                    </div>
+                    </div>}
                 </div>
             </div>
 
