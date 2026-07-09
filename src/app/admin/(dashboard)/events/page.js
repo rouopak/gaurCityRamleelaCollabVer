@@ -17,7 +17,10 @@ export default function EventsPage() {
         setLoading(false);
     };
 
-    useEffect(() => { loadEvents(); }, []);
+    useEffect(() => {
+        const timer = setTimeout(() => loadEvents(), 0);
+        return () => clearTimeout(timer);
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

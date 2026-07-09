@@ -12,10 +12,13 @@ const SideBar = () => {
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(max-width: 768px)");
-        setIsMobile(mediaQuery.matches);
+        const timer = setTimeout(() => setIsMobile(mediaQuery.matches), 0);
         const handleMediaQueryChange = (event) => setIsMobile(event.matches);
         mediaQuery.addEventListener("change", handleMediaQueryChange);
-        return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
+        return () => {
+            clearTimeout(timer);
+            mediaQuery.removeEventListener("change", handleMediaQueryChange);
+        };
     }, []);
 
     if (!isMobile) return null;

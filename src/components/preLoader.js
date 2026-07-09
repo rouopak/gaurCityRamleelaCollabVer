@@ -11,8 +11,8 @@ const PreLoader = () => {
         // Check if user has already visited in this session to show only on first load
         const hasVisited = sessionStorage.getItem("visited");
         if (hasVisited) {
-            setLoading(false);
-            return;
+            const initialTimer = setTimeout(() => setLoading(false), 0);
+            return () => clearTimeout(initialTimer);
         }
 
         // Run the loader for 2.5 seconds, then set visited and close it

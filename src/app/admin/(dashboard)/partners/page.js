@@ -17,7 +17,10 @@ export default function PartnersPage() {
         setLoading(false);
     };
 
-    useEffect(() => { loadData(); }, []);
+    useEffect(() => {
+        const timer = setTimeout(() => loadData(), 0);
+        return () => clearTimeout(timer);
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

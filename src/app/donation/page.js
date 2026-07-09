@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const page = () => {
+const DonationPage = () => {
     const [isEnlarged, setIsEnlarged] = useState(false);
 
     return (
@@ -186,4 +186,4 @@ const page = () => {
     )
 }
 
-export default page;
+export default DonationPage;

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -44,7 +45,7 @@ export default function AdminLoginPage() {
     return (
         <div className="min-h-screen flex items-center justify-center relative overflow-hidden"
             style={{ background: "linear-gradient(135deg, #1a0a00 0%, #2d1400 30%, #4d1700 60%, #811915 100%)" }}>
-            
+
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-10"
@@ -60,7 +61,7 @@ export default function AdminLoginPage() {
                 <div className="text-center mb-8">
                     <div className="relative w-20 h-20 mx-auto mb-4">
                         <Image
-                            src="/images/temp_logo.png"
+                            src="/images/srst_logo.png"
                             fill
                             className="object-contain"
                             alt="Shree RamLeela Seva Trust"
@@ -81,7 +82,7 @@ export default function AdminLoginPage() {
                         background: "linear-gradient(145deg, rgba(245,233,210,0.08) 0%, rgba(245,233,210,0.03) 100%)",
                         backdropFilter: "blur(20px)",
                     }}>
-                    
+
                     <form onSubmit={handleSubmit} className="space-y-5">
                         {error && (
                             <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3 text-red-300 text-sm flex items-center gap-2">
