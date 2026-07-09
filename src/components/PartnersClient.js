@@ -7,7 +7,8 @@ const PartnersClient = ({ partners }) => {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setMounted(true);
+        const timer = setTimeout(() => setMounted(true), 0);
+        return () => clearTimeout(timer);
     }, []);
 
     // Triple the partners list to guarantee a seamless loop on all screen widths

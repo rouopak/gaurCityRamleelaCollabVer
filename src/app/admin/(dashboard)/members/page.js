@@ -17,7 +17,10 @@ export default function MembersPage() {
         setLoading(false);
     };
 
-    useEffect(() => { loadMembers(); }, []);
+    useEffect(() => {
+        const timer = setTimeout(() => loadMembers(), 0);
+        return () => clearTimeout(timer);
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
