@@ -1,9 +1,24 @@
 import React from "react";
+import prisma from "@/lib/prisma";
 import PartnersClient from "./PartnersClient";
-import { partners } from "@/constants";
+import { partners as staticPartners } from "@/constants";
 
-export default function Partners() {
-    if (!partners || partners.length === 0) return null;
+export default async function Partners() {
+    let dbPartners = [];
+    
+    try {
+        dbPartners = await prisma.partner.findMany({
+            where: { published: true },
+            orderBy: { order: "asc" },
+        });
+    } catch (error) {
+        console.error("Failed to fetch partners from database:", error);
+    }
 
-    return <PartnersClient partners={partners} />;
+    // Combine static partners and DB partners
+    const combinedPartners = [...staticPartners, ...dbPartners];
+
+    if (combinedPartners.length === 0) return null;
+
+    return <PartnersClient partners={combinedPartners} />;
 }
