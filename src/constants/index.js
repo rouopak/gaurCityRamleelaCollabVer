@@ -48,16 +48,48 @@ const footerLinks = [
 ];
 const partners = [
     {
+        name: "Ablaser",
+        image: "/images/partners/ablaser.svg",
+    },
+    {
+        name: "Anand",
+        image: "/images/partners/anand.svg",
+    },
+    {
+        name: "Aster",
+        image: "/images/partners/aster.svg",
+    },
+    {
+        name: "Bkd Batra",
+        image: "/images/partners/bkdbatra.svg",
+    },
+    {
+        name: "British Paints",
+        image: "/images/partners/britishpaints.svg",
+    },
+    {
+        name: "Catch",
+        image: "/images/partners/catch.svg",
+    },
+    {
+        name: "Corbett",
+        image: "/images/partners/corbett.svg",
+    },
+    {
+        name: "Gupta",
+        image: "/images/partners/gupta.svg",
+    },
+    {
         name: "Dainik Jagran",
         image: "/images/partners/images.jpg",
     },
     {
-        name: "Stake",
-        image: "/images/partners/stake.svg"
+        name: "Vedanta",
+        image: "/images/partners/vedanta.svg",
     },
     {
-        name: "Portugal",
-        image: "/images/partners/portugal.svg"
+        name: "Vision Art",
+        image: "/images/partners/visionart.svg",
     },
 ];
 

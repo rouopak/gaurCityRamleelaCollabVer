@@ -31,11 +31,11 @@ const PartnersClient = ({ partners }) => {
                 <div className={`flex w-max items-center gap-12 md:gap-20 ${mounted ? "animate-marquee" : ""}`}>
                     {loopPartners.map((partner, index) => (
                         <div
-                            key={`${partner.id}-${index}`}
+                            key={`${partner.id || partner.name}-${index}`}
                             className="flex items-center justify-center bg-white border border-[#4d1700]/5 shadow-sm rounded-xl px-8 py-4 h-16 w-36 md:w-44 transition-all duration-300 hover:scale-105 shrink-0"
                         >
                             <Image
-                                src={partner.logo || "/images/srst_logo.png"}
+                                src={partner.image || partner.logo || "/images/srst_logo.png"}
                                 alt={partner.name}
                                 width={160}
                                 height={80}
