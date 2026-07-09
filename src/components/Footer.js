@@ -42,12 +42,22 @@ const Footer = () => {
                     <ul className="flex flex-col space-y-3">
                         {footerLinks.map((link) => (
                             <li key={link.name}>
-                                <Link
-                                    href={link.link}
-                                    className="text-sm md:text-base text-[#fffaf0]/75 hover:text-[#fffaf0] transition-colors duration-200"
-                                >
-                                    {link.name}
-                                </Link>
+                                {link.link.startsWith('/admin') ? (
+                                    <a
+                                        href={link.link}
+                                        onClick={() => sessionStorage.removeItem("visited")}
+                                        className="text-sm md:text-base text-[#fffaf0]/75 hover:text-[#fffaf0] transition-colors duration-200"
+                                    >
+                                        {link.name}
+                                    </a>
+                                ) : (
+                                    <Link
+                                        href={link.link}
+                                        className="text-sm md:text-base text-[#fffaf0]/75 hover:text-[#fffaf0] transition-colors duration-200"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                )}
                             </li>
                         ))}
                     </ul>

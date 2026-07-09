@@ -137,8 +137,9 @@ export default function AdminSidebar() {
 
             {/* Bottom Actions */}
             <div className="border-t border-[#F5E9D2]/10 p-3 space-y-1">
-                <Link
+                <a
                     href="/"
+                    onClick={() => sessionStorage.removeItem("visited")}
                     className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[#F5E9D2]/50 hover:text-[#F5E9D2]/80 hover:bg-[#F5E9D2]/5 transition-all duration-200"
                 >
                     <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -146,7 +147,7 @@ export default function AdminSidebar() {
                             d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                     {!collapsed && <span className="text-sm">View Site</span>}
-                </Link>
+                </a>
 
                 <button
                     onClick={() => signOut({ callbackUrl: "/admin/login" })}
