@@ -35,9 +35,10 @@ export default async function AdminLayout({ children }) {
                         <p className="text-sm text-[#F5E9D2]/70 leading-relaxed">
                             The Admin Portal is not accessible on mobile or tablet devices. Please switch to a desktop computer.
                         </p>
-                        <Link href="/" className="mt-4 px-6 py-2.5 rounded-xl border border-[#F5E9D2]/10 bg-[#F5E9D2]/5 hover:bg-[#F5E9D2]/10 text-xs font-semibold uppercase tracking-wider transition-all duration-300">
+                        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                        <a href="/" className="mt-4 px-6 py-2.5 rounded-xl border border-[#F5E9D2]/10 bg-[#F5E9D2]/5 hover:bg-[#F5E9D2]/10 text-xs font-semibold uppercase tracking-wider transition-all duration-300">
                             Back to Home
-                        </Link>
+                        </a>
                     </div>
                 </div>
 

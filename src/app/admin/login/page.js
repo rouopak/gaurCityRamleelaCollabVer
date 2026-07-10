@@ -56,9 +56,10 @@ export default function AdminLoginPage() {
                     <p className="text-sm text-[#F5E9D2]/70 leading-relaxed">
                         The Admin Portal is not accessible on mobile or tablet devices. Please switch to a desktop computer to sign in.
                     </p>
-                    <Link href="/" className="mt-4 px-6 py-2.5 rounded-xl border border-[#F5E9D2]/10 bg-[#F5E9D2]/5 hover:bg-[#F5E9D2]/10 text-xs font-semibold uppercase tracking-wider">
+                    {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                    <a href="/" className="mt-4 px-6 py-2.5 rounded-xl border border-[#F5E9D2]/10 bg-[#F5E9D2]/5 hover:bg-[#F5E9D2]/10 text-xs font-semibold uppercase tracking-wider">
                         Back to Home
-                    </Link>
+                    </a>
                 </div>
             </div>
 
@@ -68,14 +69,15 @@ export default function AdminLoginPage() {
                     {/* Logo / Header */}
                     <div className="text-center mb-8">
                         <div className="relative w-20 h-20 mx-auto mb-4">
-                            <Link href="/" className="logo" onClick={() => sessionStorage.removeItem("visited")}>
+                            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                            <a href="/" className="logo" onClick={() => sessionStorage.removeItem("visited")}>
                                 <Image
                                     src="/images/srst_logo.png"
                                     fill
                                     className="object-contain"
                                     alt="Shree RamLeela Seva Trust"
                                 />
-                            </Link>
+                            </a>
                         </div>
                         <h1 className="text-2xl font-bold text-[#F5E9D2] tracking-wide"
                             style={{ fontFamily: "var(--font-cinzel), serif" }}>

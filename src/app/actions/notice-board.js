@@ -27,7 +27,30 @@ async function uploadImage(file) {
 }
 
 export async function getNotice() {
-    return prisma.noticeBoard.findMany({ orderBy: { publishDate: "desc" } });
+    return prisma.noticeBoard.findMany({
+        orderBy: [
+            { publishDate: "desc" },
+            { createdAt: "desc" }
+        ]
+    });
+}
+
+export async function getNoticeTitles() {
+    return prisma.noticeBoard.findMany({
+        where: { published: true },
+        select: { id: true, title: true },
+        orderBy: [
+            { publishDate: "desc" },
+            { createdAt: "desc" }
+        ]
+    });
+}
+
+export async function getNoticeDetails(id) {
+    return prisma.noticeBoard.findUnique({
+        where: { id },
+        select: { id: true, title: true, description: true, image: true, publishDate: true }
+    });
 }
 
 export async function createNotice(formData) {
@@ -42,6 +65,20 @@ export async function createNotice(formData) {
 
     const imageFile = formData.get("image");
     const image = await uploadImage(imageFile);
+
+    // Enforce a maximum of 8 entries in the NoticeBoard table by deleting the oldest notices
+    const count = await prisma.noticeBoard.count();
+    if (count >= 8) {
+        const oldestNotices = await prisma.noticeBoard.findMany({
+            orderBy: { publishDate: "asc" },
+            take: count - 8 + 1,
+            select: { id: true }
+        });
+        const idsToDelete = oldestNotices.map(n => n.id);
+        await prisma.noticeBoard.deleteMany({
+            where: { id: { in: idsToDelete } }
+        });
+    }
 
     await prisma.noticeBoard.create({
         data: { title, description, image, publishDate, published },

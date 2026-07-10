@@ -1,28 +1,67 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+import { usePathname } from "next/navigation";
+
 const PreLoader = () => {
     const [loading, setLoading] = useState(true);
+    const pathname = usePathname();
+    const isLastAdminRef = useRef(null);
 
     useEffect(() => {
-        // Check if user has already visited in this session to show only on first load
-        const hasVisited = sessionStorage.getItem("visited");
-        if (hasVisited) {
-            const initialTimer = setTimeout(() => setLoading(false), 0);
-            return () => clearTimeout(initialTimer);
+        const isCurrentAdmin = pathname?.startsWith("/admin");
+        
+        // 1. Initial mount handling
+        if (isLastAdminRef.current === null) {
+            isLastAdminRef.current = isCurrentAdmin;
+            
+            if (isCurrentAdmin) {
+                sessionStorage.removeItem("visited");
+                const timer = setTimeout(() => setLoading(false), 1800);
+                return () => clearTimeout(timer);
+            } else {
+                const hasVisited = sessionStorage.getItem("visited");
+                if (hasVisited) {
+                    const timer = setTimeout(() => setLoading(false), 0);
+                    return () => clearTimeout(timer);
+                } else {
+                    const timer = setTimeout(() => {
+                        setLoading(false);
+                        sessionStorage.setItem("visited", "true");
+                    }, 2500);
+                    return () => clearTimeout(timer);
+                }
+            }
+            return;
         }
 
-        // Run the loader for 2.5 seconds, then set visited and close it
-        const timer = setTimeout(() => {
-            setLoading(false);
-            sessionStorage.setItem("visited", "true");
-        }, 2500);
+        // 2. Subsequent navigation boundary checks (Admin <-> Home)
+        if (isLastAdminRef.current !== isCurrentAdmin) {
+            isLastAdminRef.current = isCurrentAdmin;
+            
+            // Asynchronously reset loading to true to avoid React cascading render warnings
+            const resetTimer = setTimeout(() => {
+                setLoading(true);
+            }, 0);
 
-        return () => clearTimeout(timer);
-    }, []);
+            const timer = setTimeout(() => {
+                setLoading(false);
+                if (!isCurrentAdmin) {
+                    sessionStorage.setItem("visited", "true");
+                } else {
+                    sessionStorage.removeItem("visited");
+                }
+            }, isCurrentAdmin ? 1800 : 2500);
+
+            return () => {
+                clearTimeout(resetTimer);
+                clearTimeout(timer);
+            };
+        }
+    }, [pathname]);
 
     return (
         <AnimatePresence>

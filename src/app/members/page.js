@@ -32,16 +32,16 @@ export default async function MembersPage() {
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                         {members.map((member) => (
-                            <div 
-                                key={member.id} 
+                            <div
+                                key={member.id}
                                 className="group bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#b55924]/20"
                             >
                                 <div className="aspect-[4/5] relative bg-black/40 overflow-hidden">
                                     {member.photo ? (
-                                        <Image 
-                                            src={member.photo} 
-                                            alt={member.name} 
-                                            fill 
+                                        <Image
+                                            src={member.photo}
+                                            alt={member.name}
+                                            fill
                                             className="object-cover transition-transform duration-500 group-hover:scale-110"
                                         />
                                     ) : (
@@ -50,12 +50,12 @@ export default async function MembersPage() {
                                         </div>
                                     )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                                    
+
                                     <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                        <h3 className="text-xl font-bold text-[#4d1700] mb-1" style={{ fontFamily: "var(--font-cinzel), serif" }}>
+                                        <h3 className="text-xl font-bold text-[#ffffff] mb-1" style={{ fontFamily: "var(--font-cinzel), serif" }}>
                                             {member.name}
                                         </h3>
-                                        <p className="text-[#b55924] font-medium text-sm tracking-wide uppercase">
+                                        <p className="text-[#ffa875] font-medium text-sm tracking-wide uppercase">
                                             {member.role}
                                         </p>
                                     </div>

@@ -2,15 +2,16 @@
 
 This is a Next.js application built for the Shree RamLeela Seva Trust. 
 
-## Recent Changes & Optimizations (Mobile & UI Refactor)
+## Recent Changes & Optimizations
+- **Notice Board Improvements**:
+  - Implemented dynamic lazy-loading for notice board descriptions/images on click to keep page loading light and fast.
+  - Capped NoticeBoard database table entries to a maximum of 8 by auto-deleting the oldest entries.
+  - Styled scrollable notice titles in the left column using the `Cinzel` font, matching the navbar.
+- **Preloader and Navigation Fixes**:
+  - Integrated the preloader into admin layouts and configured it to trigger when crossing boundaries between admin and home pages.
+  - Reverted administrative home-bound links (logo and "View Site") back to standard anchor tags (`<a>`) to force full server layout reloads across the admin boundary.
 - **Navbar & Sidebar Separation**: Fully decoupled the mobile sidebar from the desktop navbar. Created a standalone `SideBar` component that handles its own mobile viewport detection and overlay logic.
-- **Conditional Rendering**: Implemented `isMobile` checks so the `Navbar` only renders on desktop and the `SideBar` only renders on mobile devices, ensuring a clean DOM.
-- **Sidebar Typography & Design**: Removed inherited `.scrolled` styling to fix flexbox layout issues. Enhanced typography using the `Cinzel` font, uppercase formatting, wide letter spacing (`tracking-[0.15em]`), and added sleek micro-animations (`hover:scale-105`) for a premium feel.
-- **Donation Modal Overlay**: Fixed the stacking context (z-index) in `donation/page.js` to `z-[999]` so the enlarged QR code modal properly covers the sticky navbar (`z-[100]`).
-- **Hero Section Mobile Optimization**:
-  - Hid heavy graphical elements (`main.png`, `Layer2.png`, and `Layer3.png`) on mobile screens to improve layout and performance.
-  - Disabled the GSAP scroll-triggered scaling and translating animation for the Ramayan title logo specifically on mobile.
-  - Vertically and horizontally centered the hero text content and logo on mobile devices for a more balanced and aesthetic presentation.
+- **Hero Section Mobile Optimization**: Hid heavy graphical elements on mobile, disabled GSAP scaling animations on mobile, and centered hero texts.
 
 ## Getting Started
 

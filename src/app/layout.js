@@ -35,6 +35,7 @@ export default async function RootLayout({ children }) {
         return (
             <html lang="en" className={`${cinzel.variable} ${yatra.variable} scroll-smooth`}>
                 <body>
+                    <PreLoader />
                     {children}
                 </body>
             </html>
