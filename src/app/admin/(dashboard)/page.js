@@ -2,27 +2,37 @@ import prisma from "@/lib/prisma";
 import Link from "next/link";
 
 export default async function AdminDashboard() {
-    const [
-        eventCount,
-        memberCount,
-        achievementCount,
-        pressReleaseCount,
-        partnerCount,
-    ] = await Promise.all([
-        prisma.event.count(),
-        prisma.member.count(),
-        prisma.achievement.count(),
-        prisma.pressRelease.count(),
-        prisma.partner.count(),
-    ]);
-
-    const stats = [
-        { name: "Events", count: eventCount, href: "/admin/events", icon: "📅" },
-        { name: "Members", count: memberCount, href: "/admin/members", icon: "👥" },
-        { name: "Achievements", count: achievementCount, href: "/admin/achievements", icon: "🏆" },
-        { name: "Press Releases", count: pressReleaseCount, href: "/admin/press-releases", icon: "📰" },
-        { name: "Partners", count: partnerCount, href: "/admin/partners", icon: "🤝" },
-    ];
+    let stats = [];
+    try {
+        const counts = await prisma.$queryRawUnsafe(`
+            SELECT 
+                (SELECT COUNT(*)::int FROM "Event") as event_count,
+                (SELECT COUNT(*)::int FROM "Member") as member_count,
+                (SELECT COUNT(*)::int FROM "Achievement") as achievement_count,
+                (SELECT COUNT(*)::int FROM "PressRelease") as press_release_count,
+                (SELECT COUNT(*)::int FROM "Partner") as partner_count,
+                (SELECT COUNT(*)::int FROM "NoticeBoard") as notice_board_count
+        `);
+        const data = counts[0] || {};
+        stats = [
+            { name: "Events", count: data.event_count || 0, href: "/admin/events", icon: "📅" },
+            { name: "Members", count: data.member_count || 0, href: "/admin/members", icon: "👥" },
+            { name: "Achievements", count: data.achievement_count || 0, href: "/admin/achievements", icon: "🏆" },
+            { name: "Press Releases", count: data.press_release_count || 0, href: "/admin/press-releases", icon: "📰" },
+            { name: "Partners", count: data.partner_count || 0, href: "/admin/partners", icon: "🤝" },
+            { name: "Notice Board", count: data.notice_board_count || 0, href: "/admin/notice-board", icon: "📋" },
+        ];
+    } catch (e) {
+        console.error("Failed to load dashboard stats:", e);
+        stats = [
+            { name: "Events", count: 0, href: "/admin/events", icon: "📅" },
+            { name: "Members", count: 0, href: "/admin/members", icon: "👥" },
+            { name: "Achievements", count: 0, href: "/admin/achievements", icon: "🏆" },
+            { name: "Press Releases", count: 0, href: "/admin/press-releases", icon: "📰" },
+            { name: "Partners", count: 0, href: "/admin/partners", icon: "🤝" },
+            { name: "Notice Board", count: 0, href: "/admin/notice-board", icon: "📋" },
+        ];
+    }
 
     return (
         <div>

@@ -33,9 +33,9 @@ const AboutUs = () => {
 
             <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
-                    
+
                     {/* Left Side - Text Content */}
-                    <motion.div 
+                    <motion.div
                         variants={staggerContainer}
                         initial="hidden"
                         whileInView="visible"
@@ -53,8 +53,8 @@ const AboutUs = () => {
                         {/* Title */}
                         <motion.div variants={fadeUp} className="mb-6">
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-[#3b271a]" style={{ fontFamily: "var(--font-cinzel), serif" }}>
-                                Shri <span className="text-[#98221b]">Ramleela Seva Trust</span><br />
-                                Greater Noida West
+                                <span className="text-[#98221b] font-bold">Shri Ramleela Seva Trust</span><br />
+                                <span className="font-medium">Greater Noida West</span>
                             </h2>
                         </motion.div>
 
@@ -76,7 +76,7 @@ const AboutUs = () => {
                             <a href="#about" className="bg-[#811915] text-[#F5E9D2] px-8 py-3.5 rounded text-sm tracking-widest font-bold uppercase hover:bg-[#6b1411] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                                 Learn More
                             </a>
-                            
+
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 rounded-full bg-[#f5e9d2] flex items-center justify-center text-[#811915] shadow-inner">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -94,14 +94,14 @@ const AboutUs = () => {
                     </motion.div>
 
                     {/* Right Side - Image Collage */}
-                    <motion.div 
+                    <motion.div
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
                         className="relative h-[500px] md:h-[600px] w-full mt-10 lg:mt-0 z-10 flex items-center justify-center"
                     >
                         {/* Decorative Background Shape */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, scale: 0.5 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1 }}
@@ -110,7 +110,7 @@ const AboutUs = () => {
 
                         <div className="relative w-full max-w-[500px] h-full flex items-center justify-center">
                             {/* Image 3 (Top Right - 140x215) */}
-                            <motion.div 
+                            <motion.div
                                 variants={imageVariants}
                                 transition={{ delay: 0.2 }}
                                 className="absolute top-[5%] right-[5%] w-[35%] aspect-[140/215] rounded-2xl overflow-hidden shadow-xl border-[6px] border-[#fffcf5] z-10 group"
@@ -120,7 +120,7 @@ const AboutUs = () => {
                             </motion.div>
 
                             {/* Image 1 (Main/Left - 440x440) */}
-                            <motion.div 
+                            <motion.div
                                 variants={imageVariants}
                                 className="absolute top-[15%] left-0 w-[65%] aspect-square rounded-2xl overflow-hidden shadow-2xl border-[8px] border-[#fffcf5] z-20 group"
                             >
@@ -129,7 +129,7 @@ const AboutUs = () => {
                             </motion.div>
 
                             {/* Image 2 (Bottom Right - 250x250) */}
-                            <motion.div 
+                            <motion.div
                                 variants={imageVariants}
                                 transition={{ delay: 0.4 }}
                                 className="absolute bottom-[5%] right-[10%] w-[45%] aspect-square rounded-2xl overflow-hidden shadow-2xl border-[6px] border-[#fffcf5] z-30 group"
@@ -139,7 +139,7 @@ const AboutUs = () => {
                             </motion.div>
 
                             {/* Experience Badge */}
-                            <motion.div 
+                            <motion.div
                                 variants={fadeUp}
                                 transition={{ delay: 0.6 }}
                                 className="absolute bottom-[10%] left-[-5%] md:left-[-10%] bg-[#811915] text-[#F5E9D2] py-4 px-6 md:py-5 md:px-8 rounded-xl shadow-2xl z-40 border-2 border-[#a3322a] flex flex-col items-center justify-center transform hover:-translate-y-1 transition-transform duration-300"
@@ -148,7 +148,7 @@ const AboutUs = () => {
                                 <span className="text-[10px] md:text-xs uppercase tracking-widest mt-1 font-medium">Greater Noida</span>
                             </motion.div>
                         </div>
-                        
+
                     </motion.div>
                 </div>
             </div>

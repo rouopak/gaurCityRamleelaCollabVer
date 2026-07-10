@@ -45,13 +45,8 @@ export default function AdminLoginPage() {
     return (
         <>
             {/* Mobile Block Screen */}
-            <div className="lg:hidden min-h-screen w-full flex flex-col items-center justify-center bg-[#1a0a00] p-6 text-center text-[#F5E9D2] relative overflow-hidden"
-                style={{ background: "linear-gradient(135deg, #1a0a00 0%, #2d1400 30%, #4d1700 60%, #811915 100%)" }}>
-                <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
-                    <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full"
-                        style={{ background: "radial-gradient(circle, #F5E9D2 0%, transparent 70%)" }} />
-                </div>
-                <div className="relative z-10 max-w-sm flex flex-col items-center gap-6">
+            <div className="lg:hidden min-h-screen w-full flex flex-col items-center justify-center bg-[#120703] p-6 text-center text-[#F5E9D2]">
+                <div className="max-w-sm flex flex-col items-center gap-6">
                     <div className="relative w-20 h-20">
                         <Image src="/images/srst_logo.png" fill className="object-contain" alt="Shree RamLeela Seva Trust" />
                     </div>
@@ -61,38 +56,26 @@ export default function AdminLoginPage() {
                     <p className="text-sm text-[#F5E9D2]/70 leading-relaxed">
                         The Admin Portal is not accessible on mobile or tablet devices. Please switch to a desktop computer to sign in.
                     </p>
-                    <a href="/" className="mt-4 px-6 py-2.5 rounded-xl border border-[#F5E9D2]/10 bg-[#F5E9D2]/5 hover:bg-[#F5E9D2]/10 text-xs font-semibold uppercase tracking-wider transition-all duration-300">
+                    <Link href="/" className="mt-4 px-6 py-2.5 rounded-xl border border-[#F5E9D2]/10 bg-[#F5E9D2]/5 hover:bg-[#F5E9D2]/10 text-xs font-semibold uppercase tracking-wider">
                         Back to Home
-                    </a>
+                    </Link>
                 </div>
             </div>
 
             {/* Desktop View */}
-            <div className="hidden lg:flex min-h-screen items-center justify-center relative overflow-hidden w-full"
-                style={{ background: "linear-gradient(135deg, #1a0a00 0%, #2d1400 30%, #4d1700 60%, #811915 100%)" }}>
-
-                {/* Animated background elements */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-10"
-                        style={{ background: "radial-gradient(circle, #F5E9D2 0%, transparent 70%)" }} />
-                    <div className="absolute -bottom-60 -left-40 w-96 h-96 rounded-full opacity-8"
-                        style={{ background: "radial-gradient(circle, #b55924 0%, transparent 70%)" }} />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5"
-                        style={{ background: "radial-gradient(circle, #F5E9D2 0%, transparent 60%)" }} />
-                </div>
-
-                <div className="relative z-10 w-full max-w-md px-6">
+            <div className="hidden lg:flex min-h-screen items-center justify-center bg-[#120703] w-full">
+                <div className="w-full max-w-md px-6">
                     {/* Logo / Header */}
                     <div className="text-center mb-8">
-                        <div className="relative w-20 h-20 mx-auto mb-4 hover:scale-105 transition-all duration-75">
-                            <a href="/" className="logo" onClick={() => sessionStorage.removeItem("visited")}>
+                        <div className="relative w-20 h-20 mx-auto mb-4">
+                            <Link href="/" className="logo" onClick={() => sessionStorage.removeItem("visited")}>
                                 <Image
                                     src="/images/srst_logo.png"
                                     fill
                                     className="object-contain"
                                     alt="Shree RamLeela Seva Trust"
                                 />
-                            </a>
+                            </Link>
                         </div>
                         <h1 className="text-2xl font-bold text-[#F5E9D2] tracking-wide"
                             style={{ fontFamily: "var(--font-cinzel), serif" }}>
@@ -104,12 +87,7 @@ export default function AdminLoginPage() {
                     </div>
 
                     {/* Login Card */}
-                    <div className="rounded-2xl p-8 shadow-2xl border border-[#F5E9D2]/10"
-                        style={{
-                            background: "linear-gradient(145deg, rgba(245,233,210,0.08) 0%, rgba(245,233,210,0.03) 100%)",
-                            backdropFilter: "blur(20px)",
-                        }}>
-
+                    <div className="rounded-2xl p-8 border border-[#F5E9D2]/10 bg-[#1c0b02] shadow-xl">
                         <form onSubmit={handleSubmit} className="space-y-5">
                             {error && (
                                 <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3 text-red-300 text-sm flex items-center gap-2">
@@ -131,7 +109,7 @@ export default function AdminLoginPage() {
                                     type="email"
                                     required
                                     autoComplete="email"
-                                    className="w-full px-4 py-3 rounded-xl border border-[#F5E9D2]/15 bg-[#F5E9D2]/5 text-[#F5E9D2] placeholder-[#F5E9D2]/30 focus:outline-none focus:border-[#b55924] focus:ring-1 focus:ring-[#b55924]/50 transition-all duration-300"
+                                    className="w-full px-4 py-3 rounded-xl border border-[#F5E9D2]/15 bg-[#F5E9D2]/5 text-[#F5E9D2] placeholder-[#F5E9D2]/30 focus:outline-none focus:border-[#b55924]"
                                     placeholder="admin@example.com"
                                 />
                             </div>
@@ -146,7 +124,7 @@ export default function AdminLoginPage() {
                                     type="password"
                                     required
                                     autoComplete="current-password"
-                                    className="w-full px-4 py-3 rounded-xl border border-[#F5E9D2]/15 bg-[#F5E9D2]/5 text-[#F5E9D2] placeholder-[#F5E9D2]/30 focus:outline-none focus:border-[#b55924] focus:ring-1 focus:ring-[#b55924]/50 transition-all duration-300"
+                                    className="w-full px-4 py-3 rounded-xl border border-[#F5E9D2]/15 bg-[#F5E9D2]/5 text-[#F5E9D2] placeholder-[#F5E9D2]/30 focus:outline-none focus:border-[#b55924]"
                                     placeholder="••••••••"
                                 />
                             </div>
@@ -154,14 +132,7 @@ export default function AdminLoginPage() {
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="w-full py-3 px-6 rounded-xl font-semibold text-sm tracking-wider uppercase transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
-                                style={{
-                                    background: loading
-                                        ? "#4d1700"
-                                        : "linear-gradient(135deg, #811915 0%, #b55924 100%)",
-                                    color: "#F5E9D2",
-                                    boxShadow: loading ? "none" : "0 4px 15px rgba(181, 89, 36, 0.3)",
-                                }}
+                                className="w-full py-3 px-6 rounded-xl font-semibold text-sm tracking-wider uppercase disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer bg-[#b55924] hover:bg-[#c9652c] text-[#F5E9D2] transition-colors"
                             >
                                 {loading ? (
                                     <span className="flex items-center justify-center gap-2">

@@ -4,6 +4,8 @@ import AdminSidebar from "@/components/admin/Sidebar";
 import { SessionProvider } from "next-auth/react";
 import "./admin.css";
 
+import Link from "next/link";
+
 export const metadata = {
     title: "Admin | Shree RamLeela Seva Trust",
     description: "Content Management System for Shree RamLeela Seva Trust",
@@ -33,9 +35,9 @@ export default async function AdminLayout({ children }) {
                         <p className="text-sm text-[#F5E9D2]/70 leading-relaxed">
                             The Admin Portal is not accessible on mobile or tablet devices. Please switch to a desktop computer.
                         </p>
-                        <a href="/" className="mt-4 px-6 py-2.5 rounded-xl border border-[#F5E9D2]/10 bg-[#F5E9D2]/5 hover:bg-[#F5E9D2]/10 text-xs font-semibold uppercase tracking-wider transition-all duration-300">
+                        <Link href="/" className="mt-4 px-6 py-2.5 rounded-xl border border-[#F5E9D2]/10 bg-[#F5E9D2]/5 hover:bg-[#F5E9D2]/10 text-xs font-semibold uppercase tracking-wider transition-all duration-300">
                             Back to Home
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
