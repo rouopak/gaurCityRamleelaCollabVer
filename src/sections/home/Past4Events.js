@@ -1,9 +1,20 @@
-import React from 'react'
+import React from 'react';
+import prisma from "@/lib/prisma";
+import Past4EventsClient from "./Past4EventsClient";
 
-const Past4Events = () => {
-    return (
-        <div>just like MainMember show past recent four event, idhar ulta hoga add past event in ascending order of year</div>
-    )
-}
+const Past4Events = async () => {
+    let events = [];
+    try {
+        events = await prisma.event.findMany({
+            where: { published: true },
+            orderBy: { year: "desc" },
+            take: 4,
+        });
+    } catch (error) {
+        console.error("Failed to fetch past events:", error);
+    }
 
-export default Past4Events
+    return <Past4EventsClient initialEvents={events} />;
+};
+
+export default Past4Events;
