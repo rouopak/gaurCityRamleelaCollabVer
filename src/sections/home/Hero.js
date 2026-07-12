@@ -125,13 +125,14 @@ const Hero = () => {
 
                 <div ref={textRef} className="text-left z-20 w-full md:w-[48%] flex flex-col items-center md:items-start origin-center pointer-events-auto text-center md:text-left mt-0">
 
-                    {/* Subheading: KEEPING OUR HERITAGE ALIVE */}
-                    <div className="subheading flex items-center justify-center md:justify-start gap-3 mb-4">
-                        <div className="h-[1px] w-6 md:w-10 bg-[#98221b]"></div>
-                        <span className="text-[#98221b] tracking-[0.25em] text-[10px] md:text-xs font-bold uppercase font-['var(--font-sans)']">
+                    {/* Subheading: Branding */}
+                    {/* md:-ml-20 pulls the container 5rem to the left (w-16=4rem + gap-4=1rem), keeping the text perfectly left-aligned with the main heading while the left line hangs beautifully outside. */}
+                    <div className="subheading flex flex-nowrap items-center justify-center md:justify-start gap-3 md:gap-4 mb-4 md:mb-6 w-full md:-ml-20">
+                        <div className="h-[2px] md:h-[3px] w-8 md:w-16 shrink-0 bg-gradient-to-r from-transparent to-[#98221b] rounded-full"></div>
+                        <span className="text-[#98221b] whitespace-nowrap tracking-[0.15em] md:tracking-[0.25em] text-sm md:text-xl lg:text-2xl font-extrabold uppercase font-['var(--font-sans)'] drop-shadow-md" style={{ textShadow: "0 2px 4px rgba(255, 255, 255, 0.7)" }}>
                             Shree RamLeela Seva Trust
                         </span>
-                        <div className="h-[1px] w-4 md:w-6 bg-[#98221b]"></div>
+                        <div className="h-[2px] md:h-[3px] w-8 md:w-32 lg:w-48 shrink bg-gradient-to-l from-transparent to-[#98221b] rounded-full"></div>
                     </div>
 
                     {/* Main Headings */}
