@@ -46,9 +46,9 @@ const Navbar = () => {
                 {/* Brand Logo & Text */}
                 <Link className="logo" href="/">
                     <Image
-                        src="/images/srst_logo.png"
+                        src="/images/ramleela-gaur-logo.png"
                         alt="Shree RamLeela Seva Trust Logo"
-                        width={100}
+                        width={150}
                         height={75}
                         className="object-contain"
                         style={{ height: "auto" }}

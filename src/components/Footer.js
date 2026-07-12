@@ -20,18 +20,18 @@ const Footer = () => {
         >
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-12 border-b border-[#fffaf0]/15">
                 {/* Brand & Hindi Description */}
-                <div className="flex flex-col space-y-6">
+                <div className="flex flex-col items-center space-y-6">
                     <Link href="/">
                         <Image
-                            src="/images/srst_logo.png"
+                            src="/images/ramleela-gaur-logo.png"
                             alt="Shree RamLeela Seva Trust Logo"
-                            width={120}
-                            height={120}
-                            className="object-none"
+                            width={240}
+                            height={240}
+                            className="object-contain"
                             style={{ height: "auto" }}
                         />
                     </Link>
-                    <p className="text-sm md:text-base leading-relaxed text-[#fffaf0]/80 font-medium max-w-xs">
+                    <p className="text-sm md:text-base leading-relaxed text-[#fffaf0]/80 font-medium max-w-xs text-center">
                         श्री रामलीला सेवा ट्रस्ट ग्रेटर नोएडा वेस्ट (रजि. न. 703) गत वर्षों में इस क्षेत्र में रामलीला आयोजित करता रहा है। जो कि इस क्षेत्र का पहला बड़ा आयोजन है।
                     </p>
                 </div>
