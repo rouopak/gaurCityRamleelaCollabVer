@@ -129,7 +129,7 @@ const Hero = () => {
                     {/* md:-ml-20 pulls the container 5rem to the left (w-16=4rem + gap-4=1rem), keeping the text perfectly left-aligned with the main heading while the left line hangs beautifully outside. */}
                     <div className="subheading flex flex-nowrap items-center justify-center md:justify-start gap-3 md:gap-4 mb-4 md:mb-6 w-full md:-ml-20">
                         <div className="h-[2px] md:h-[3px] w-8 md:w-16 shrink-0 bg-gradient-to-r from-transparent to-[#98221b] rounded-full"></div>
-                        <span className="text-[#98221b] whitespace-nowrap tracking-[0.15em] md:tracking-[0.25em] text-sm md:text-xl lg:text-2xl font-extrabold uppercase font-['var(--font-sans)'] drop-shadow-md" style={{ textShadow: "0 2px 4px rgba(255, 255, 255, 0.7)" }}>
+                        <span className="text-[#98221b] whitespace-nowrap tracking-[0.15em] md:tracking-[0.25em] text-sm md:text-xl lg:text-2xl font-light uppercase font-['var(--font-sans)'] drop-shadow-md" style={{ textShadow: "0 2px 4px rgba(255, 255, 255, 0.7)" }}>
                             Shree RamLeela Seva Trust
                         </span>
                         <div className="h-[2px] md:h-[3px] w-8 md:w-32 lg:w-48 shrink bg-gradient-to-l from-transparent to-[#98221b] rounded-full"></div>

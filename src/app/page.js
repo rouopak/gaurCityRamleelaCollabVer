@@ -1,14 +1,14 @@
-import Hero from "@/sections/home/Hero";
+
 import AboutUs from "@/sections/home/AboutUs";
 import ChooseUs from "@/sections/home/ChooseUs";
 import MainMembers from "@/sections/home/MainMembers";
 import Past4Events from "@/sections/home/Past4Events";
 import NoticeBoard from "@/sections/home/NoticeBoard";
-
+import NewHero from "@/sections/home/NewHero";
 const Home = () => {
   return (
     <>
-      <Hero />
+      <NewHero />
       <AboutUs />
       <ChooseUs />
       <MainMembers />
