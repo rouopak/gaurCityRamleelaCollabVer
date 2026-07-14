@@ -155,9 +155,29 @@ const Footer = () => {
             </div>
 
             {/* Bottom copyright row */}
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-8 text-xs md:text-sm font-semibold text-[#fffaf0]/75">
-                <p className="text-center md:text-left mb-4 md:mb-0">
+            <div className="max-w-7xl mx-auto flex flex-col items-center justify-center pt-8 text-xs md:text-sm font-semibold text-[#fffaf0]/75 gap-2 text-center">
+                <p>
                     All Rights Reserved © Shree Ram Leela GNW 2025
+                </p>
+                <p className="text-[#fffaf0]/60 font-medium">
+                    Created By{" "}
+                    <a
+                        href="https://github.com/rouopak"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline hover:text-[#fffaf0] transition-colors"
+                    >
+                        Rupak Sharma
+                    </a>{" "}
+                    &{" "}
+                    <a
+                        href="https://github.com/PIXELoverHERE"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline hover:text-[#fffaf0] transition-colors"
+                    >
+                        Devansh Mishra
+                    </a>
                 </p>
             </div>
 

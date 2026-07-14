@@ -176,6 +176,11 @@ const NewHero = () => {
                                     priority
                                 />
                             </div>
+
+                            {/* Shine Effect Layer */}
+                            <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden" style={{ maskImage: 'url(/images/ramayanText.png)', maskSize: 'contain', maskPosition: 'center', maskRepeat: 'no-repeat', WebkitMaskImage: 'url(/images/ramayanText.png)', WebkitMaskSize: 'contain', WebkitMaskPosition: 'center', WebkitMaskRepeat: 'no-repeat' }}>
+                                <div className="absolute top-0 left-0 w-[60%] h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-70 animate-shine blur-[1px]"></div>
+                            </div>
                         </div>
                     </h1>
 
