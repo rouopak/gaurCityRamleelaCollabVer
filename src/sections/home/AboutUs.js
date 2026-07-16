@@ -145,7 +145,7 @@ const AboutUs = () => {
                                 className="absolute bottom-[10%] left-[-5%] md:left-[-10%] bg-[#811915] text-[#F5E9D2] py-4 px-6 md:py-5 md:px-8 rounded-xl shadow-2xl z-40 border-2 border-[#a3322a] flex flex-col items-center justify-center transform hover:-translate-y-1 transition-transform duration-300"
                             >
                                 <span className="text-3xl md:text-5xl font-bold" style={{ fontFamily: "var(--font-cinzel), serif" }}>SRST</span>
-                                <span className="text-[10px] md:text-xs uppercase tracking-widest mt-1 font-medium">Greater Noida</span>
+                                <span className="text-[10px] md:text-xs uppercase tracking-widest mt-1 font-medium">Greater Noida (west)</span>
                             </motion.div>
                         </div>
 
