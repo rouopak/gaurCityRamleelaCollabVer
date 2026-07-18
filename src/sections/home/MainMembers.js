@@ -1,20 +1,35 @@
 import React from 'react';
-import prisma from "@/lib/prisma";
 import MainMembersClient from "./MainMembersClient";
 
-const MainMembers = async () => {
-    let members = [];
-    try {
-        members = await prisma.member.findMany({
-            where: { published: true },
-            orderBy: { order: "asc" },
-            take: 4,
-        });
-    } catch (error) {
-        console.error("Failed to fetch main members:", error);
-    }
+const MainMembers = () => {
+    const members = [
+        {
+            id: "1",
+            name: "Sh. Tejpal Nagar",
+            role: "MLA Noida Dadri",
+            photo: "/images/main members/tejpal.png",
+        },
+        {
+            id: "2",
+            name: "Sh. Shrichand Sharma",
+            role: "Member of Legislative Council (MLC)",
+            photo: "/images/main members/shrichand-sharma.jpg",
+        },
+        {
+            id: "3",
+            name: "Sh. Sumit Kumar",
+            role: "Settlor / व्यवस्थापक",
+            photo: "/images/main members/sumit-kumar.jpg",
+        },
+        {
+            id: "4",
+            name: "Sh. R S Uppal",
+            role: "President / अध्यक्ष",
+            photo: "/images/main members/rs-uppal.jpg",
+        }
+    ];
 
     return <MainMembersClient initialMembers={members} />;
 };
 
-export default MainMembers;
+export default MainMembers;

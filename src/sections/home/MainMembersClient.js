@@ -68,18 +68,18 @@ export default function MainMembersClient({ initialMembers }) {
             <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#f5e9d2] rounded-full mix-blend-multiply filter blur-3xl opacity-40 pointer-events-none translate-y-1/2 translate-x-1/2"></div>
 
             <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
-                
+
                 {/* Section Header */}
                 <div className="flex flex-col items-center text-center mb-16">
                     <div className="flex items-center gap-3 mb-4">
                         <div className="h-[2px] w-8 bg-[#98221b]"></div>
                         <span className="text-[#98221b] tracking-[0.2em] text-xs md:text-sm font-bold uppercase">
-                            Committee Members
+                            PATRON & MEMBERS
                         </span>
                         <div className="h-[2px] w-8 bg-[#98221b]"></div>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-[#3b271a]" style={{ fontFamily: "var(--font-cinzel), serif" }}>
-                        मुख्य संगठनकर्ता
+                        संरक्षक एवं सदस्य
                     </h2>
                     <div className="w-20 h-[3px] bg-[#98221b]/80 mt-4 rounded-full"></div>
                 </div>
@@ -108,7 +108,7 @@ export default function MainMembersClient({ initialMembers }) {
 
                             {/* Outer/Inner Dual Border Layout */}
                             <div className="border border-slate-100 p-2.5 rounded-xl bg-[#fffefc] h-full flex flex-col justify-between transition-colors duration-300 group-hover:border-[#98221b]/10">
-                                
+
                                 {/* Photo / Avatar Frame */}
                                 <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-[#f8f5f0] mb-5 group/img border border-slate-100 flex items-center justify-center">
                                     {member.photo ? (
@@ -131,7 +131,7 @@ export default function MainMembersClient({ initialMembers }) {
                                     )}
                                     {/* Shimmer overlay effect on hover */}
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-150%] group-hover/img:translate-x-[150%] transition-transform duration-1000 ease-out"></div>
-                                    
+
                                     {/* Traditional Indian Arch Pattern Overlay on Photo */}
                                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#3b271a]/80 via-[#3b271a]/20 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
                                         <span className="text-white/80 text-[10px] uppercase tracking-widest font-semibold">जय श्री राम</span>
@@ -140,8 +140,8 @@ export default function MainMembersClient({ initialMembers }) {
 
                                 {/* Typography / Details */}
                                 <div className="text-center pb-2">
-                                    <h3 
-                                        className="text-lg font-bold text-[#3b271a] group-hover:text-[#98221b] transition-colors duration-300" 
+                                    <h3
+                                        className="text-lg font-bold text-[#3b271a] group-hover:text-[#98221b] transition-colors duration-300"
                                         style={{ fontFamily: "var(--font-cinzel), serif" }}
                                     >
                                         {member.name}
