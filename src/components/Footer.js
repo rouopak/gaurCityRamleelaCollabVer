@@ -20,7 +20,7 @@ const Footer = () => {
         >
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-12 border-b border-[#fffaf0]/15">
                 {/* Brand & Hindi Description */}
-                <div className="flex flex-col items-center space-y-6">
+                <div className="flex flex-col items-center md:col-span-2 lg:col-span-2 space-y-6">
                     <Link href="/">
                         <Image
                             src="/images/ramleela-gaur-logo.png"
@@ -58,23 +58,6 @@ const Footer = () => {
                                         {link.name}
                                     </Link>
                                 )}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                {/* Past Events */}
-                <div className="flex flex-col space-y-6">
-                    <h4 className="text-lg md:text-xl font-bold uppercase tracking-wider text-[#fffaf0]">Past Events</h4>
-                    <ul className="flex flex-col space-y-3">
-                        {pastEvents.map((event) => (
-                            <li key={event.name}>
-                                <Link
-                                    href={event.link}
-                                    className="text-sm md:text-base text-[#fffaf0]/75 hover:text-[#fffaf0] transition-colors duration-200"
-                                >
-                                    {event.name}
-                                </Link>
                             </li>
                         ))}
                     </ul>
