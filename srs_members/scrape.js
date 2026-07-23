@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
 
-const BASE_URL = 'https://www.srstrust.com';
+const BASE_URL = 'https://example.com';
 const PAGES = [
     '/members-list.html',
     '/members-list-2.html',

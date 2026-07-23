@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const fallbackEvents = [
@@ -11,7 +13,7 @@ const fallbackEvents = [
         hindiTitle: "भव्य राम राज्याभिषेक",
         year: 2024,
         description: "मर्यादा पुरुषोत्तम श्री राम के राज्याभिषेक का भव्य और अलौकिक मंचन, जिसमें समस्त अयोध्या हर्षोल्लास से सराबोर उठी। Gaur City residents witnessed a spectacular display of devotion and culture.",
-        image: "https://www.srstrust.com/assets/images/about-two-img-2.jpg",
+        image: "/images/achievements/yoga/1.jpg",
     },
     {
         id: "ev-2",
@@ -19,7 +21,7 @@ const fallbackEvents = [
         hindiTitle: "स्वर्ण लंका दहन",
         year: 2023,
         description: "वीर हनुमान जी द्वारा रावण की लंका के दहन का अद्भुत और रोमांचकारी दृश्य, जिसने दर्शकों को भक्ति रस से भावविभोर कर दिया। The scene featured stunning pyrotechnics and performances.",
-        image: "https://www.srstrust.com/assets/images/about-two-img-1.jpg",
+        image: "/images/achievements/yoga/2.jpg",
     },
     {
         id: "ev-3",
@@ -27,7 +29,7 @@ const fallbackEvents = [
         hindiTitle: "सीता स्वयंवर एवं धनुष भंजन",
         year: 2022,
         description: "प्रभु श्री राम द्वारा शिव धनुष के भंजन और माता सीता के वरण की अलौकिक लीला, जो त्याग और मर्यादा का अनुपम उदाहरण है। A stellar presentation of ancient grace and music.",
-        image: "https://www.srstrust.com/assets/images/about-two-img-3.jpg",
+        image: "/images/achievements/yoga/3.jpg",
     },
     {
         id: "ev-4",
@@ -35,11 +37,13 @@ const fallbackEvents = [
         hindiTitle: "भरत मिलाप एवं शांति सन्देश",
         year: 2021,
         description: "चित्रकूट में प्रभु श्री राम और भ्राता भरत के भावुक मिलन की मार्मिक प्रस्तुति, जिसने भाई-भाई के निश्चल प्रेम की पराकाष्ठा को दर्शाया। A tear-inducing display of pure familial love.",
-        image: "https://www.srstrust.com/assets/images/about-two-img-1.jpg",
+        image: "/images/achievements/yoga/4.jpg",
     }
 ];
 
-export default function Past4EventsClient({ initialEvents }) {
+export default function Past4EventsClient({ initialEvents, availableYears = [] }) {
+    const router = useRouter();
+
     // If no events are configured in database, use fallback past events
     const displayEvents = initialEvents && initialEvents.length > 0
         ? [...initialEvents].slice(0, 4)
@@ -47,6 +51,10 @@ export default function Past4EventsClient({ initialEvents }) {
 
     // State for the expanded panel
     const [hoveredId, setHoveredId] = useState(displayEvents[0]?.id || null);
+
+    const handleCardClick = (event) => {
+        setHoveredId(event.id);
+    };
 
     return (
         <section className="py-20 md:py-28 bg-[#fffcf5] overflow-hidden relative" id="events">
@@ -86,13 +94,14 @@ export default function Past4EventsClient({ initialEvents }) {
                     {displayEvents.map((event, index) => {
                         const isActive = hoveredId === event.id;
                         const eventImage = event.images && event.images[0] ? event.images[0] : event.image;
+                        const hasYearFile = availableYears.includes(event.year);
 
                         return (
                             <motion.div
                                 key={event.id}
                                 layout
                                 onHoverStart={() => setHoveredId(event.id)}
-                                onClick={() => setHoveredId(event.id)}
+                                onClick={() => handleCardClick(event)}
                                 transition={{
                                     type: "spring",
                                     stiffness: 120,
@@ -157,7 +166,7 @@ export default function Past4EventsClient({ initialEvents }) {
                                 </AnimatePresence>
 
                                 {/* Detailed expanded view content */}
-                                <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-8 text-white pointer-events-none">
+                                <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-8 text-white">
                                     <AnimatePresence>
                                         {isActive && (
                                             <motion.div
@@ -167,9 +176,12 @@ export default function Past4EventsClient({ initialEvents }) {
                                                 className="flex flex-col items-start max-w-xl"
                                             >
                                                 {/* Badge/Year */}
-                                                <span className="bg-[#98221b] text-[#f5e9d2] text-xs font-bold px-3.5 py-1 rounded-full tracking-widest mb-4">
-                                                    YEAR {event.year}
-                                                </span>
+                                                <div className="flex items-center gap-2 mb-4">
+                                                    <span className="bg-[#98221b] text-[#f5e9d2] text-xs font-bold px-3.5 py-1 rounded-full tracking-widest">
+                                                        YEAR {event.year}
+                                                    </span>
+                                                    {/* Removed Dedicated Page tag */}
+                                                </div>
 
                                                 {/* Titles */}
                                                 <h3 
@@ -189,6 +201,16 @@ export default function Past4EventsClient({ initialEvents }) {
                                                 <p className="text-slate-200 text-xs md:text-sm leading-relaxed mb-6 line-clamp-3 md:line-clamp-none">
                                                     {event.description}
                                                 </p>
+
+                                                {hasYearFile && (
+                                                    <Link
+                                                        href={`/prevEvent/yearWise/year${event.year}`}
+                                                        className="inline-flex items-center gap-2 bg-[#98221b] hover:bg-[#b55924] text-[#f5e9d2] text-xs font-bold px-4 py-2 rounded-xl transition-all shadow-md mb-4"
+                                                        onClick={(e) => e.stopPropagation()}
+                                                    >
+                                                        View Gallery &rarr;
+                                                    </Link>
+                                                )}
 
                                                 {/* Shimmering Gold Bottom Line ornament */}
                                                 <div className="w-24 h-[1px] bg-gradient-to-r from-[#ffa875] to-transparent"></div>

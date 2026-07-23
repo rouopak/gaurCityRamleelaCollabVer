@@ -115,7 +115,7 @@ const AboutUs = () => {
                                 transition={{ delay: 0.2 }}
                                 className="absolute top-[5%] right-[5%] w-[35%] aspect-[140/215] rounded-2xl overflow-hidden shadow-xl border-[6px] border-[#fffcf5] z-10 group"
                             >
-                                <img src="https://www.srstrust.com/assets/images/about-two-img-3.jpg" alt="Ramleela Actors" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                <img src="/images/achievements/yoga/1.jpg" alt="Ramleela Actors" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
                             </motion.div>
 
@@ -124,7 +124,7 @@ const AboutUs = () => {
                                 variants={imageVariants}
                                 className="absolute top-[15%] left-0 w-[65%] aspect-square rounded-2xl overflow-hidden shadow-2xl border-[8px] border-[#fffcf5] z-20 group"
                             >
-                                <img src="https://www.srstrust.com/assets/images/about-two-img-1.jpg" alt="Ravana Actor" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                <img src="/images/donate-now.jpg" alt="Ravana Actor" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
                             </motion.div>
 
@@ -134,7 +134,7 @@ const AboutUs = () => {
                                 transition={{ delay: 0.4 }}
                                 className="absolute bottom-[5%] right-[10%] w-[45%] aspect-square rounded-2xl overflow-hidden shadow-2xl border-[6px] border-[#fffcf5] z-30 group"
                             >
-                                <img src="https://www.srstrust.com/assets/images/about-two-img-2.jpg" alt="Ram, Laxman, Sita on boat" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                <img src="/images/mainImg.png" alt="Ram, Laxman, Sita on boat" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
                             </motion.div>
 

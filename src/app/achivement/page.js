@@ -72,7 +72,7 @@ export default async function AchievementsPage() {
                     </div>
                 )}
 
-                {/* ─── Static Achievements (scraped from srstrust.com) ─── */}
+                {/* ─── Static Achievements ─── */}
                 <div className="space-y-24">
                     {staticAchievements.map((section) => (
                         <div key={section.id}>
