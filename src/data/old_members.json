@@ -6,10 +6,16 @@
     "originalPhotoUrl": "/images/members/sumit-kumar.jpg"
   },
   {
-    "name": "Sh. Manoj Mishra",
+    "name": "Sh. Sachin Kumar Sharma",
     "designation": "General Secretary",
-    "photo": "manoj-mishra.jpg",
-    "originalPhotoUrl": "/images/members/manoj-mishra.jpg"
+    "photo": "sachin-kumar-sharma.jpg",
+    "originalPhotoUrl": "/images/members/sachin-kumar-sharma.jpg"
+  },
+  {
+    "name": "Sh. Amit Bajpai",
+    "designation": "Treasurer",
+    "photo": "amit-bajpai.jpg",
+    "originalPhotoUrl": "/images/members/amit-bajpai.jpg"
   },
   {
     "name": "Sh. Prashant Mishra",
@@ -30,28 +36,34 @@
     "originalPhotoUrl": "/images/members/arjun-gupta.jpg"
   },
   {
+    "name": "Sh. Gyanesh Sharma",
+    "designation": "Member",
+    "photo": "gyanesh-sharma.jpg",
+    "originalPhotoUrl": "/images/members/gyanesh-sharma.jpg"
+  },
+  {
     "name": "Sh. Kailash Sharma",
     "designation": "Vice president",
     "photo": "kailash-sharma.jpg",
     "originalPhotoUrl": "/images/members/kailash-sharma.jpg"
   },
   {
-    "name": "Sh. Sachin Kumar Sharma",
-    "designation": "Vice President",
-    "photo": "sachin-kumar-sharma.jpg",
-    "originalPhotoUrl": "/images/members/sachin-kumar-sharma.jpg"
+    "name": "Sh. Virendra Kumar",
+    "designation": "Member",
+    "photo": "virendra-sharma.jpg",
+    "originalPhotoUrl": "/images/members/virendra-sharma.jpg"
+  },
+  {
+    "name": "Sh. Manoj Mishra",
+    "designation": "General Secretary",
+    "photo": "manoj-mishra.jpg",
+    "originalPhotoUrl": "/images/members/manoj-mishra.jpg"
   },
   {
     "name": "Sh. Pradeep Kumar",
     "designation": "Member",
     "photo": "pradeep-kumar.jpg",
     "originalPhotoUrl": "/images/members/pradeep-kumar.jpg"
-  },
-  {
-    "name": "Sh. Amit Bajpai",
-    "designation": "Vice President",
-    "photo": "amit-bajpai.jpg",
-    "originalPhotoUrl": "/images/members/amit-bajpai.jpg"
   },
   {
     "name": "Sh. Prashant Shukla",

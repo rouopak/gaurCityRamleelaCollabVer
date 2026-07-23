@@ -1,0 +1,40 @@
+[
+  {
+    "id": "static-yoga",
+    "title": "Yoga",
+    "description": "Promoting physical and spiritual wellness through yoga sessions organized as part of our cultural initiatives.",
+    "category": "yoga",
+    "images": [
+      "/images/achievements/yoga/9.jpg",
+      "/images/achievements/yoga/8.jpg",
+      "/images/achievements/yoga/1.jpg",
+      "/images/achievements/yoga/4.jpg",
+      "/images/achievements/yoga/2.jpg",
+      "/images/achievements/yoga/5.jpg",
+      "/images/achievements/yoga/7.jpg",
+      "/images/achievements/yoga/3.jpg",
+      "/images/achievements/yoga/6.jpg"
+    ]
+  },
+  {
+    "id": "static-certificate",
+    "title": "Best Ramleela Management — Awarded By Amarujala",
+    "description": "Recognized and awarded by Amarujala for outstanding Ramleela management, a testament to the Trust's dedication and organizational excellence.",
+    "category": "certificate",
+    "images": [
+      "/images/achievements/certificate/1.jpg",
+      "/images/achievements/certificate/2.jpg",
+      "/images/achievements/certificate/4.jpg",
+      "/images/achievements/certificate/3.jpg"
+    ]
+  },
+  {
+    "id": "static-patrika",
+    "title": "Patrika Vimochan",
+    "description": "श्री रामलीला सेवा ट्रस्ट ग्रेटर नोएडा वेस्ट (रजि. न. 703) गत वर्षों में इस क्षेत्र में रामलीला आयोजित करता रहा है। जो कि इस क्षेत्र का पहला बड़ा आयोजन है।",
+    "category": "patrika",
+    "images": [
+      "/images/achievements/patrika/1.jpg"
+    ]
+  }
+]
