@@ -47,11 +47,7 @@ export default async function PastEventsPage() {
                                             <div className="px-4 py-1.5 rounded-full bg-[#b55924]/20 border border-[#b55924]/50 text-[#4d1700] font-semibold text-xl">
                                                 {event.year}
                                             </div>
-                                            {hasYearFile && (
-                                                <span className="text-xs px-2.5 py-1 rounded-full bg-[#98221b] text-white font-medium">
-                                                    Dedicated Page Available
-                                                </span>
-                                            )}
+                                            {/* Removed Dedicated Page Available tag */}
                                         </div>
                                         <h2 className="text-3xl font-bold text-[#4d1700]" style={{ fontFamily: "var(--font-cinzel), serif" }}>
                                             {event.title}
@@ -67,7 +63,7 @@ export default async function PastEventsPage() {
                                                     href={yearUrl}
                                                     className="inline-flex items-center gap-2 text-sm font-semibold text-[#98221b] hover:text-[#b55924] transition-colors"
                                                 >
-                                                    View {event.year} Gallery & Details &rarr;
+                                                    View Gallery &rarr;
                                                 </Link>
                                             </div>
                                         )}
@@ -91,7 +87,7 @@ export default async function PastEventsPage() {
                                                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                                                                 {hasYearFile && (
                                                                     <span className="text-white text-xs font-semibold bg-[#98221b]/80 px-3 py-1 rounded-full backdrop-blur-sm">
-                                                                        View year{event.year}.js page &rarr;
+                                                                        View Gallery &rarr;
                                                                     </span>
                                                                 )}
                                                             </div>

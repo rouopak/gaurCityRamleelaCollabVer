@@ -45,7 +45,7 @@ export default async function YearPage({ params }) {
 
     return (
         <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-[#fffcf5]">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto">
                 <div className="mb-8">
                     <Link
                         href="/prevEvent"

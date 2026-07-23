@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import EventGalleryTabs from "@/components/EventGalleryTabs";
 
 export default function Year2024Page({ event }) {
     const title = event?.title || "Grand Ram Rajyabhishek 2024";
@@ -14,9 +15,9 @@ export default function Year2024Page({ event }) {
     return (
         <div className="space-y-12">
             {/* Main Header Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white rounded-3xl p-4 md:p-6 shadow-xl border border-amber-900/10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-white rounded-3xl p-4 md:p-6 shadow-xl border border-amber-900/10">
                 {/* Main Image */}
-                <div className="relative aspect-video lg:aspect-square w-full rounded-2xl overflow-hidden shadow-md">
+                <div className="relative w-full h-full min-h-[300px] rounded-2xl overflow-hidden shadow-md lg:col-span-5">
                     <Image 
                         src={images[0] || "/images/achievements/yoga/1.jpg"} 
                         alt={title} 
@@ -26,7 +27,7 @@ export default function Year2024Page({ event }) {
                     />
                 </div>
                 {/* Right Side Text Box */}
-                <div className="flex flex-col justify-center p-4 lg:p-8">
+                <div className="flex flex-col h-full p-4 lg:p-8 lg:col-span-7">
                     <span className="inline-block px-4 py-1 rounded-full bg-[#f5e9d2] text-[#98221b] font-bold text-sm uppercase tracking-widest mb-4 w-max">
                         Recent Event • 2024
                     </span>
@@ -38,7 +39,7 @@ export default function Year2024Page({ event }) {
                     </p>
                     
                     {/* Blank text box area */}
-                    <div className="w-full min-h-[150px] border-2 border-dashed border-amber-900/20 rounded-xl p-6 bg-amber-50/50 flex flex-col justify-start">
+                    <div className="flex-grow w-full min-h-[150px] border-2 border-dashed border-amber-900/20 rounded-xl p-6 bg-amber-50/50 flex flex-col justify-start">
                         {/* Empty space for content */}
                     </div>
                 </div>
@@ -49,21 +50,7 @@ export default function Year2024Page({ event }) {
                 <h2 className="text-2xl md:text-3xl font-bold text-[#4d1700] mb-6" style={{ fontFamily: "var(--font-cinzel), serif" }}>
                     2024 Event Highlights & Glimpses
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {images.map((img, i) => (
-                        <div key={i} className="relative aspect-video md:aspect-square rounded-2xl overflow-hidden shadow-xl border border-amber-900/10 group">
-                            <Image
-                                src={img}
-                                alt={`2024 RamLeela image ${i + 1}`}
-                                fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                <span className="text-white text-sm font-medium">Gaur City Ramleela 2024 - View {i + 1}</span>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <EventGalleryTabs year="2024" />
             </div>
         </div>
     );
