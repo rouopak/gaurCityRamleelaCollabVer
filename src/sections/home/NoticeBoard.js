@@ -143,8 +143,8 @@ const NoticeBoard = () => {
                                         className="flex flex-col md:flex-row items-center md:items-start gap-8 w-full h-full"
                                     >
                                         {/* Notice Image Column */}
-                                        <div className="w-full md:w-1/2 max-w-[280px] shrink-0">
-                                            <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-lg border-4 border-white rotate-[-1deg] bg-white">
+                                        <div className="w-full md:w-1/2 max-w-[280px] shrink-0 mx-auto md:mx-0">
+                                            <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-lg border-4 border-white bg-white">
                                                 {activeNotice.image ? (
                                                     <Image
                                                         src={activeNotice.image}

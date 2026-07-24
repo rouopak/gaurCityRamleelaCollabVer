@@ -46,15 +46,13 @@ export async function createEvent(formData) {
     const description = formData.get("description");
     const published = formData.get("published") === "true";
     
-    // Handle multiple image uploads
-    const imageFiles = formData.getAll("images");
+    // Handle single cover image upload
+    const imageFile = formData.get("image");
     const images = [];
     
-    for (const file of imageFiles) {
-        if (file && file.size > 0) {
-            const url = await uploadImage(file);
-            if (url) images.push(url);
-        }
+    if (imageFile && imageFile.size > 0) {
+        const url = await uploadImage(imageFile);
+        if (url) images.push(url);
     }
 
     await prisma.event.create({
@@ -74,17 +72,15 @@ export async function updateEvent(id, formData) {
     const description = formData.get("description");
     const published = formData.get("published") === "true";
     
-    // Get existing images
-    const existingImages = formData.get("existingImages");
-    let images = existingImages ? JSON.parse(existingImages) : [];
+    // Get existing image
+    const existing = await prisma.event.findUnique({ where: { id }, select: { images: true } });
+    let images = existing?.images || [];
     
-    // Handle new image uploads
-    const imageFiles = formData.getAll("newImages");
-    for (const file of imageFiles) {
-        if (file && file.size > 0) {
-            const url = await uploadImage(file);
-            if (url) images.push(url);
-        }
+    // Handle new single image upload (replaces existing)
+    const imageFile = formData.get("image");
+    if (imageFile && imageFile.size > 0) {
+        const url = await uploadImage(imageFile);
+        if (url) images = [url];
     }
 
     await prisma.event.update({

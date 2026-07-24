@@ -94,11 +94,12 @@ const partners = [
 ];
 
 const pastEvents = [
-    { name: "Event 2018", link: "/prevEvent?year=2018" },
-    { name: "Event 2019", link: "/prevEvent?year=2019" },
-    { name: "Event 2020", link: "/prevEvent?year=2020" },
-    { name: "Event 2022", link: "/prevEvent?year=2022" },
-    { name: "Event 2024", link: "/prevEvent?year=2024" },
+    { name: "Event 2025", link: "/prevEvent/yearWise/year2025" },
+    { name: "Event 2024", link: "/prevEvent/yearWise/year2024" },
+    { name: "Event 2022", link: "/prevEvent/yearWise/year2022" },
+    { name: "Event 2020", link: "/prevEvent/yearWise/year2020" },
+    { name: "Event 2019", link: "/prevEvent/yearWise/year2019" },
+    { name: "Event 2018", link: "/prevEvent/yearWise/year2018" },
 ];
 
 const socialLinks = [

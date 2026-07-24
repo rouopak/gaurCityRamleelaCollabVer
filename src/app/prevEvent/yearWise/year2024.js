@@ -4,12 +4,12 @@ import Image from "next/image";
 import EventGalleryTabs from "@/components/EventGalleryTabs";
 
 export default function Year2024Page({ event }) {
-    const title = event?.title || "Grand Ram Rajyabhishek 2024";
-    const description = event?.description || "In 2024, Shree RamLeela Seva Trust celebrated the grandest RamLeela at Gaur City with unprecedented enthusiasm, grand stagecraft, and divine cultural performances.";
+    const title = event?.title || "श्री रामलीला महोत्सव 2024";
+    const description = event?.description || "श्री रामलीला सेवा ट्रस्ट ग्रेटर नोएडा वेस्ट (रजि. न. 703) गत वर्षों में इस क्षेत्र में रामलीला आयोजित करता रहा है। जो कि इस क्षेत्र का पहला बड़ा आयोजन है। श्री रामलीला सेवा ट्रस्ट द्वारा आयोजित रामलीला आयोजनों की सफलता का श्रेय ट्रस्ट के सभी सदस्यों को जाता है। यह कार्यक्रम एक अथक मेहनत और व्यापक योजना के परिणामस्वरूप सफल हुए।";
     const images = event?.images && event.images.length > 0 ? event.images : [
-        "/images/achievements/yoga/1.jpg",
-        "/images/achievements/yoga/2.jpg",
-        "/images/achievements/yoga/3.jpg",
+        "/images/events/2024/day3/1.jpg",
+        "/images/events/2024/day5/1.jpg",
+        "/images/events/2024/day10/1.jpg",
     ];
 
     return (
@@ -19,7 +19,7 @@ export default function Year2024Page({ event }) {
                 {/* Main Image */}
                 <div className="relative w-full h-full min-h-[300px] rounded-2xl overflow-hidden shadow-md lg:col-span-5">
                     <Image 
-                        src={images[0] || "/images/achievements/yoga/1.jpg"} 
+                        src={images[0] || "/images/events/2024/day3/1.jpg"} 
                         alt={title} 
                         fill 
                         className="object-cover"
@@ -29,7 +29,7 @@ export default function Year2024Page({ event }) {
                 {/* Right Side Text Box */}
                 <div className="flex flex-col h-full p-4 lg:p-8 lg:col-span-7">
                     <span className="inline-block px-4 py-1 rounded-full bg-[#f5e9d2] text-[#98221b] font-bold text-sm uppercase tracking-widest mb-4 w-max">
-                        Recent Event • 2024
+                        Event • 12 Oct, 2024
                     </span>
                     <h1 className="text-3xl md:text-5xl font-bold mb-4 text-[#4d1700]" style={{ fontFamily: "var(--font-cinzel), serif" }}>
                         {title}
@@ -38,9 +38,20 @@ export default function Year2024Page({ event }) {
                         {description}
                     </p>
                     
-                    {/* Blank text box area */}
-                    <div className="flex-grow w-full min-h-[150px] border-2 border-dashed border-amber-900/20 rounded-xl p-6 bg-amber-50/50 flex flex-col justify-start">
-                        {/* Empty space for content */}
+                    {/* Event Stats */}
+                    <div className="grid grid-cols-3 gap-4 mt-auto">
+                        <div className="text-center p-3 rounded-xl bg-amber-50/80 border border-amber-900/10">
+                            <div className="text-2xl font-bold text-[#98221b]">11</div>
+                            <div className="text-xs text-amber-900/60 font-medium">Days</div>
+                        </div>
+                        <div className="text-center p-3 rounded-xl bg-amber-50/80 border border-amber-900/10">
+                            <div className="text-2xl font-bold text-[#98221b]">101</div>
+                            <div className="text-xs text-amber-900/60 font-medium">Photos</div>
+                        </div>
+                        <div className="text-center p-3 rounded-xl bg-amber-50/80 border border-amber-900/10">
+                            <div className="text-2xl font-bold text-[#98221b]">2024</div>
+                            <div className="text-xs text-amber-900/60 font-medium">Year</div>
+                        </div>
                     </div>
                 </div>
             </div>

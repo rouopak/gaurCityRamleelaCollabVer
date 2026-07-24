@@ -88,7 +88,7 @@ export default function EventsPage() {
                                 <tr>
                                     <th>Title</th>
                                     <th>Year</th>
-                                    <th>Images</th>
+                                    <th>Image</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -99,18 +99,13 @@ export default function EventsPage() {
                                         <td className="font-medium">{event.title}</td>
                                         <td>{event.year}</td>
                                         <td>
-                                            <div className="flex -space-x-2">
-                                                {event.images?.slice(0, 3).map((img, i) => (
-                                                    <div key={i} className="relative w-8 h-8 rounded-lg overflow-hidden border-2 border-[#1a0a00]">
-                                                        <Image src={img} fill className="object-cover" alt="" />
-                                                    </div>
-                                                ))}
-                                                {event.images?.length > 3 && (
-                                                    <span className="w-8 h-8 rounded-lg bg-[#F5E9D2]/10 flex items-center justify-center text-[10px] text-[#F5E9D2]/50 border-2 border-[#1a0a00]">
-                                                        +{event.images.length - 3}
-                                                    </span>
-                                                )}
-                                            </div>
+                                            {event.images?.[0] ? (
+                                                <div className="relative w-10 h-10 rounded-lg overflow-hidden border-2 border-[#1a0a00]">
+                                                    <Image src={event.images[0]} fill className="object-cover" alt="" />
+                                                </div>
+                                            ) : (
+                                                <span className="text-[#F5E9D2]/30 text-xs">No image</span>
+                                            )}
                                         </td>
                                         <td>
                                             <span className={`admin-badge ${event.published ? "admin-badge-green" : "admin-badge-yellow"}`}>
@@ -171,12 +166,17 @@ export default function EventsPage() {
                             </div>
                             <div>
                                 <label className="admin-label">
-                                    {editingEvent ? "Add More Images" : "Images"}
+                                    {editingEvent ? "Replace Cover Image" : "Cover Image"}
                                 </label>
-                                <input name={editingEvent ? "newImages" : "images"} type="file" accept="image/*" multiple
+                                <input name="image" type="file" accept="image/*"
                                     className="admin-input" />
-                                {editingEvent?.images?.length > 0 && (
-                                    <input type="hidden" name="existingImages" value={JSON.stringify(editingEvent.images)} />
+                                {editingEvent?.images?.[0] && (
+                                    <div className="mt-2 flex items-center gap-3">
+                                        <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-[#F5E9D2]/20">
+                                            <Image src={editingEvent.images[0]} fill className="object-cover" alt="Current" />
+                                        </div>
+                                        <span className="text-[#F5E9D2]/40 text-xs">Current image (upload new to replace)</span>
+                                    </div>
                                 )}
                             </div>
                             <div className="flex items-center gap-3">

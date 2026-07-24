@@ -7,8 +7,8 @@ export default function Year2025Page({ event }) {
     const title = event?.title || "RamLeela Mahotsav 2025";
     const description = event?.description || "In 2025, Shree RamLeela Seva Trust presented an enchanting, spiritually uplifting RamLeela celebration featuring interactive drama, state-of-the-art light design, and joyous devotion.";
     const images = event?.images && event.images.length > 0 ? event.images : [
-        "/images/achievements/yoga/4.jpg",
-        "/images/achievements/yoga/5.jpg",
+        "/images/events/2025/IMG_5833.JPG.jpeg",
+        "/images/events/2025/IMG_5835.JPG.jpeg",
     ];
 
     return (
@@ -18,7 +18,7 @@ export default function Year2025Page({ event }) {
                 {/* Main Image */}
                 <div className="relative w-full h-full min-h-[300px] rounded-2xl overflow-hidden shadow-md lg:col-span-5">
                     <Image 
-                        src={images[0] || "/images/achievements/yoga/4.jpg"} 
+                        src={images[0] || "/images/events/2025/IMG_5833.JPG.jpeg"} 
                         alt={title} 
                         fill 
                         className="object-cover"

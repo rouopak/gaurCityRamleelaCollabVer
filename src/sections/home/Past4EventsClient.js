@@ -9,19 +9,19 @@ import { motion, AnimatePresence } from "framer-motion";
 const fallbackEvents = [
     {
         id: "ev-1",
+        title: "RamLeela Mahotsav",
+        hindiTitle: "श्री रामलीला महोत्सव",
+        year: 2025,
+        description: "In 2025, Shree RamLeela Seva Trust presented an enchanting, spiritually uplifting RamLeela celebration featuring interactive drama, state-of-the-art light design, and joyous devotion.",
+        image: "/images/events/2025/IMG_5833.JPG.jpeg",
+    },
+    {
+        id: "ev-2",
         title: "Grand Ram Rajyabhishek",
         hindiTitle: "भव्य राम राज्याभिषेक",
         year: 2024,
         description: "मर्यादा पुरुषोत्तम श्री राम के राज्याभिषेक का भव्य और अलौकिक मंचन, जिसमें समस्त अयोध्या हर्षोल्लास से सराबोर उठी। Gaur City residents witnessed a spectacular display of devotion and culture.",
-        image: "/images/achievements/yoga/1.jpg",
-    },
-    {
-        id: "ev-2",
-        title: "Golden Lanka Dahan",
-        hindiTitle: "स्वर्ण लंका दहन",
-        year: 2023,
-        description: "वीर हनुमान जी द्वारा रावण की लंका के दहन का अद्भुत और रोमांचकारी दृश्य, जिसने दर्शकों को भक्ति रस से भावविभोर कर दिया। The scene featured stunning pyrotechnics and performances.",
-        image: "/images/achievements/yoga/2.jpg",
+        image: "/images/events/2024/day3/1.jpg",
     },
     {
         id: "ev-3",
@@ -29,15 +29,15 @@ const fallbackEvents = [
         hindiTitle: "सीता स्वयंवर एवं धनुष भंजन",
         year: 2022,
         description: "प्रभु श्री राम द्वारा शिव धनुष के भंजन और माता सीता के वरण की अलौकिक लीला, जो त्याग और मर्यादा का अनुपम उदाहरण है। A stellar presentation of ancient grace and music.",
-        image: "/images/achievements/yoga/3.jpg",
+        image: "/images/events/2022/IMG_0006.JPG",
     },
     {
         id: "ev-4",
-        title: "Bharat Milap & Shanti Sandesh",
-        hindiTitle: "भरत मिलाप एवं शांति सन्देश",
-        year: 2021,
-        description: "चित्रकूट में प्रभु श्री राम और भ्राता भरत के भावुक मिलन की मार्मिक प्रस्तुति, जिसने भाई-भाई के निश्चल प्रेम की पराकाष्ठा को दर्शाया। A tear-inducing display of pure familial love.",
-        image: "/images/achievements/yoga/4.jpg",
+        title: "Shree RamLeela Mahotsav",
+        hindiTitle: "श्री रामलीला महोत्सव",
+        year: 2020,
+        description: "कोरोना महामारी के दौरान सीमित दर्शकों के साथ आयोजित यह रामलीला आस्था और संयम का अद्भुत संगम थी। The celebration continued despite the challenging times with utmost safety.",
+        image: "/images/events/2020/1.jpg",
     }
 ];
 

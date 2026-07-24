@@ -1,46 +1,197 @@
 {
-  "2020": {
-    "day1": [
-      "/images/achievements/yoga/1.jpg"
-    ],
-    "day2": [],
-    "day3": [],
-    "day4": [],
-    "day5": [],
-    "day6": [],
-    "day7": [],
-    "day8": [],
-    "day9": [],
-    "day10": []
-  },
+  "2018": [
+    "/images/events/2018/1.jpg",
+    "/images/events/2018/2.jpg",
+    "/images/events/2018/3.jpg",
+    "/images/events/2018/4.jpg",
+    "/images/events/2018/5.jpg",
+    "/images/events/2018/6.jpg",
+    "/images/events/2018/7.jpg",
+    "/images/events/2018/8.jpg",
+    "/images/events/2018/9.jpg",
+    "/images/events/2018/10.jpg",
+    "/images/events/2018/11.jpg",
+    "/images/events/2018/12.jpg",
+    "/images/events/2018/13.jpg",
+    "/images/events/2018/14.jpg"
+  ],
+  "2019": [
+    "/images/events/2019/1.jpg",
+    "/images/events/2019/2.jpg",
+    "/images/events/2019/3.jpg",
+    "/images/events/2019/4.jpg",
+    "/images/events/2019/5.jpg",
+    "/images/events/2019/6.jpg",
+    "/images/events/2019/7.jpg",
+    "/images/events/2019/8.jpg",
+    "/images/events/2019/9.jpg",
+    "/images/events/2019/10.jpg",
+    "/images/events/2019/11.jpg",
+    "/images/events/2019/12.jpg"
+  ],
+  "2020": [
+    "/images/events/2020/1.jpg",
+    "/images/events/2020/2.jpg",
+    "/images/events/2020/3.jpg",
+    "/images/events/2020/4.jpg",
+    "/images/events/2020/5.jpg",
+    "/images/events/2020/6.jpg",
+    "/images/events/2020/7.jpg",
+    "/images/events/2020/8.jpg"
+  ],
+  "2022": [
+    "/images/events/2022/IMG_0006.JPG",
+    "/images/events/2022/IMG_0165.JPG",
+    "/images/events/2022/IMG_0221.JPG",
+    "/images/events/2022/IMG_6891.JPG",
+    "/images/events/2022/IMG_6892.JPG",
+    "/images/events/2022/IMG_6893.JPG",
+    "/images/events/2022/IMG_6963.JPG",
+    "/images/events/2022/IMG_7286.JPG",
+    "/images/events/2022/IMG_7287.JPG",
+    "/images/events/2022/IMG_8249.JPG",
+    "/images/events/2022/IMG_8299.JPG",
+    "/images/events/2022/IMG_8300.JPG"
+  ],
   "2024": {
     "day1": [
-      "/images/achievements/yoga/2.jpg"
+      "/images/events/2024/day1/1.jpg",
+      "/images/events/2024/day1/2.jpg",
+      "/images/events/2024/day1/3.jpg",
+      "/images/events/2024/day1/4.jpg"
     ],
-    "day2": [],
-    "day3": [],
-    "day4": [],
-    "day5": [],
-    "day6": [],
-    "day7": [],
-    "day8": [],
-    "day9": [],
-    "day10": [],
-    "day11": []
+    "day2": [
+      "/images/events/2024/day2/1.jpg",
+      "/images/events/2024/day2/2.jpg",
+      "/images/events/2024/day2/3.jpg",
+      "/images/events/2024/day2/4.jpg"
+    ],
+    "day3": [
+      "/images/events/2024/day3/1.jpg",
+      "/images/events/2024/day3/2.jpg",
+      "/images/events/2024/day3/3.jpg",
+      "/images/events/2024/day3/4.jpg",
+      "/images/events/2024/day3/5.jpg",
+      "/images/events/2024/day3/6.jpg",
+      "/images/events/2024/day3/7.jpg",
+      "/images/events/2024/day3/8.jpg",
+      "/images/events/2024/day3/9.jpg",
+      "/images/events/2024/day3/10.jpg",
+      "/images/events/2024/day3/11.jpg",
+      "/images/events/2024/day3/12.jpg",
+      "/images/events/2024/day3/13.jpg",
+      "/images/events/2024/day3/14.jpg",
+      "/images/events/2024/day3/15.jpg",
+      "/images/events/2024/day3/16.jpg",
+      "/images/events/2024/day3/17.jpg",
+      "/images/events/2024/day3/18.jpg",
+      "/images/events/2024/day3/19.jpg",
+      "/images/events/2024/day3/20.jpg",
+      "/images/events/2024/day3/21.jpg",
+      "/images/events/2024/day3/22.jpg",
+      "/images/events/2024/day3/23.jpg"
+    ],
+    "day4": [
+      "/images/events/2024/day4/1.jpg",
+      "/images/events/2024/day4/2.jpg",
+      "/images/events/2024/day4/3.jpg",
+      "/images/events/2024/day4/4.jpg",
+      "/images/events/2024/day4/5.jpg",
+      "/images/events/2024/day4/6.jpg",
+      "/images/events/2024/day4/7.jpg",
+      "/images/events/2024/day4/8.jpg",
+      "/images/events/2024/day4/9.jpg",
+      "/images/events/2024/day4/10.jpg",
+      "/images/events/2024/day4/11.jpg",
+      "/images/events/2024/day4/12.jpg"
+    ],
+    "day5": [
+      "/images/events/2024/day5/1.jpg",
+      "/images/events/2024/day5/2.jpg",
+      "/images/events/2024/day5/3.jpg",
+      "/images/events/2024/day5/4.jpg",
+      "/images/events/2024/day5/5.jpg",
+      "/images/events/2024/day5/6.jpg",
+      "/images/events/2024/day5/7.jpg",
+      "/images/events/2024/day5/8.jpg",
+      "/images/events/2024/day5/9.jpg",
+      "/images/events/2024/day5/10.jpg",
+      "/images/events/2024/day5/11.jpg",
+      "/images/events/2024/day5/12.jpg",
+      "/images/events/2024/day5/13.jpg",
+      "/images/events/2024/day5/14.jpg",
+      "/images/events/2024/day5/15.jpg",
+      "/images/events/2024/day5/16.jpg",
+      "/images/events/2024/day5/17.jpg",
+      "/images/events/2024/day5/18.jpg"
+    ],
+    "day6": [
+      "/images/events/2024/day6/1.jpg",
+      "/images/events/2024/day6/2.jpg",
+      "/images/events/2024/day6/3.jpg",
+      "/images/events/2024/day6/4.jpg"
+    ],
+    "day7": [
+      "/images/events/2024/day7/1.jpg",
+      "/images/events/2024/day7/2.jpg",
+      "/images/events/2024/day7/3.jpg",
+      "/images/events/2024/day7/4.jpg",
+      "/images/events/2024/day7/5.jpg",
+      "/images/events/2024/day7/6.jpg",
+      "/images/events/2024/day7/7.jpg",
+      "/images/events/2024/day7/8.jpg",
+      "/images/events/2024/day7/9.jpg",
+      "/images/events/2024/day7/10.jpg"
+    ],
+    "day8": [
+      "/images/events/2024/day8/1.jpg",
+      "/images/events/2024/day8/2.jpg",
+      "/images/events/2024/day8/3.jpg",
+      "/images/events/2024/day8/4.jpg",
+      "/images/events/2024/day8/5.jpg",
+      "/images/events/2024/day8/6.jpg",
+      "/images/events/2024/day8/7.jpg"
+    ],
+    "day9": [
+      "/images/events/2024/day9/1.jpg",
+      "/images/events/2024/day9/2.jpg",
+      "/images/events/2024/day9/3.jpg"
+    ],
+    "day10": [
+      "/images/events/2024/day10/1.jpg",
+      "/images/events/2024/day10/2.jpg",
+      "/images/events/2024/day10/3.jpg",
+      "/images/events/2024/day10/4.jpg",
+      "/images/events/2024/day10/5.jpg",
+      "/images/events/2024/day10/6.jpg",
+      "/images/events/2024/day10/7.jpg",
+      "/images/events/2024/day10/8.jpg",
+      "/images/events/2024/day10/9.jpg",
+      "/images/events/2024/day10/10.jpg",
+      "/images/events/2024/day10/11.jpg",
+      "/images/events/2024/day10/12.jpg"
+    ],
+    "day11": [
+      "/images/events/2024/day11/1.jpg",
+      "/images/events/2024/day11/2.jpg",
+      "/images/events/2024/day11/3.jpg",
+      "/images/events/2024/day11/4.jpg"
+    ]
   },
-  "2025": {
-    "day1": [
-      "/images/achievements/yoga/3.jpg"
-    ],
-    "day2": [],
-    "day3": [],
-    "day4": [],
-    "day5": [],
-    "day6": [],
-    "day7": [],
-    "day8": [],
-    "day9": [],
-    "day10": [],
-    "day11": []
-  }
+  "2025": [
+    "/images/events/2025/IMG_5833.JPG.jpeg",
+    "/images/events/2025/IMG_5835.JPG.jpeg",
+    "/images/events/2025/IMG_5851.JPG.jpeg",
+    "/images/events/2025/IMG_5853.JPG.jpeg",
+    "/images/events/2025/WhatsApp Image 2026-07-24 at 2.20.35 PM.jpeg",
+    "/images/events/2025/WhatsApp Image 2026-07-24 at 2.20.42 PM.jpeg",
+    "/images/events/2025/WhatsApp Image 2026-07-24 at 2.20.43 PM.jpeg",
+    "/images/events/2025/WhatsApp Image 2026-07-24 at 2.20.44 PM.jpeg",
+    "/images/events/2025/WhatsApp Image 2026-07-24 at 2.20.47 PM.jpeg",
+    "/images/events/2025/WhatsApp Image 2026-07-24 at 2.21.17 PM.jpeg",
+    "/images/events/2025/WhatsApp Image 2026-07-24 at 2.21.18 PM.jpeg",
+    "/images/events/2025/WhatsApp Image 2026-07-24 at 2.21.19 PM (1).jpeg",
+    "/images/events/2025/WhatsApp Image 2026-07-24 at 2.21.19 PM.jpeg",
+    "/images/events/2025/WhatsApp Image 2026-07-24 at 2.21.20 PM.jpeg"
+  ]
 }

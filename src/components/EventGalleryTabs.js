@@ -6,17 +6,55 @@ import { motion, AnimatePresence } from "framer-motion";
 import eventGallery from "@/data/eventGallery.json";
 
 export default function EventGalleryTabs({ year }) {
-    const galleryData = eventGallery[year] || {};
-    
-    // Extract days like "day1", "day2" and sort them properly
-    const days = Object.keys(galleryData).sort((a, b) => {
+    const galleryData = eventGallery[year];
+
+    // Check if data is a flat array (no day-wise grouping)
+    const isFlat = Array.isArray(galleryData);
+
+    // For flat arrays, render a simple grid without tabs
+    if (isFlat) {
+        const images = galleryData || [];
+        return (
+            <div className="w-full">
+                {images.length > 0 ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        {images.map((img, idx) => (
+                            <motion.div
+                                key={`flat-${idx}`}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                                className="relative aspect-video md:aspect-square w-full rounded-2xl overflow-hidden shadow-xl border border-amber-900/10"
+                            >
+                                <Image
+                                    src={img}
+                                    alt={`Gallery Image for ${year} - ${idx + 1}`}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                />
+                            </motion.div>
+                        ))}
+                    </div>
+                ) : (
+                    <div className="w-full flex items-center justify-center py-20 bg-white/40 rounded-2xl border border-amber-900/10 border-dashed">
+                        <p className="text-[#4d1700]/50 font-medium">No images available yet.</p>
+                    </div>
+                )}
+            </div>
+        );
+    }
+
+    // Day-wise object: extract days and render with tabs
+    const data = galleryData || {};
+    const days = Object.keys(data).sort((a, b) => {
         const numA = parseInt(a.replace("day", ""), 10);
         const numB = parseInt(b.replace("day", ""), 10);
         return numA - numB;
     });
 
     const [activeDay, setActiveDay] = useState(days[0] || "day1");
-    const currentImages = galleryData[activeDay] || [];
+    const currentImages = data[activeDay] || [];
 
     return (
         <div className="w-full">
@@ -82,3 +120,4 @@ export default function EventGalleryTabs({ year }) {
         </div>
     );
 }
+

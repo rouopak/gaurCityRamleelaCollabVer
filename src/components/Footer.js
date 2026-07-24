@@ -18,9 +18,9 @@ const Footer = () => {
                 backgroundAttachment: "scroll"
             }}
         >
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-12 border-b border-[#fffaf0]/15">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-12 border-b border-[#fffaf0]/15">
                 {/* Brand & Hindi Description */}
-                <div className="flex flex-col items-center md:col-span-2 lg:col-span-2 space-y-6">
+                <div className="flex flex-col items-center lg:items-start md:col-span-2 lg:col-span-4 space-y-6">
                     <Link href="/">
                         <Image
                             src="/images/ramleela-gaur-logo.png"
@@ -31,13 +31,13 @@ const Footer = () => {
                             style={{ height: "auto" }}
                         />
                     </Link>
-                    <p className="text-sm md:text-base leading-relaxed text-[#fffaf0]/80 font-medium max-w-xs text-center">
+                    <p className="text-sm md:text-base leading-relaxed text-[#fffaf0]/80 font-medium max-w-sm text-center lg:text-left">
                         श्री रामलीला सेवा ट्रस्ट ग्रेटर नोएडा वेस्ट (रजि. न. 703) गत वर्षों में इस क्षेत्र में रामलीला आयोजित करता रहा है। जो कि इस क्षेत्र का पहला बड़ा आयोजन है।
                     </p>
                 </div>
 
                 {/* Useful Links */}
-                <div className="flex flex-col space-y-6">
+                <div className="flex flex-col space-y-6 lg:col-span-2 lg:col-start-6">
                     <h4 className="text-lg md:text-xl font-bold uppercase tracking-wider text-[#fffaf0]">Useful Links</h4>
                     <ul className="flex flex-col space-y-3">
                         {footerLinks.map((link) => (
@@ -63,8 +63,25 @@ const Footer = () => {
                     </ul>
                 </div>
 
+                {/* Events */}
+                <div className="flex flex-col space-y-6 lg:col-span-2">
+                    <h4 className="text-lg md:text-xl font-bold uppercase tracking-wider text-[#fffaf0]">Events</h4>
+                    <ul className="flex flex-col space-y-3">
+                        {pastEvents.map((event) => (
+                            <li key={event.name}>
+                                <Link
+                                    href={event.link}
+                                    className="text-sm md:text-base text-[#fffaf0]/75 hover:text-[#fffaf0] transition-colors duration-200"
+                                >
+                                    {event.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
                 {/* Contact Info & Socials */}
-                <div className="flex flex-col space-y-6 relative">
+                <div className="flex flex-col space-y-6 relative lg:col-span-3 lg:col-start-10">
                     <h4 className="text-lg md:text-xl font-bold uppercase tracking-wider text-[#fffaf0]">Contact Info</h4>
                     <div className="flex flex-col space-y-4">
                         {/* Phone */}
