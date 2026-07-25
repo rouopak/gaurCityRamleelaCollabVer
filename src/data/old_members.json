@@ -1,11 +1,5 @@
 [
   {
-    "name": "Sh. Sumit kumar",
-    "designation": "Settlor",
-    "photo": "sumit-kumar.jpg",
-    "originalPhotoUrl": "/images/members/sumit-kumar.jpg"
-  },
-  {
     "name": "Sh. Sachin Kumar Sharma",
     "designation": "General Secretary",
     "photo": "sachin-kumar-sharma.jpg",
@@ -55,7 +49,7 @@
   },
   {
     "name": "Sh. Manoj Mishra",
-    "designation": "General Secretary",
+    "designation": "Member",
     "photo": "manoj-mishra.jpg",
     "originalPhotoUrl": "/images/members/manoj-mishra.jpg"
   },
