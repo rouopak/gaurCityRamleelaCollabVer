@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# ─── Dependencies ────────────────────────────────────────────────────────────
 /node_modules
 /.pnp
 .pnp.*
@@ -10,35 +10,58 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
+# ─── Environment & Secrets (NEVER commit these) ───────────────────────────────
+.env
+.env.*
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
 
-# next.js
+# ─── Database / ORM ──────────────────────────────────────────────────────────
+/src/generated/
+.neon
+
+# ─── Next.js Build Artifacts ─────────────────────────────────────────────────
 /.next/
 /out/
-
-# production
 /build
 
-# misc
-.DS_Store
-*.pem
+# ─── Testing ─────────────────────────────────────────────────────────────────
+/coverage
 
-# debug
+# ─── TypeScript ──────────────────────────────────────────────────────────────
+*.tsbuildinfo
+next-env.d.ts
+
+# ─── Logs & Debug ────────────────────────────────────────────────────────────
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
 
-# env files (can opt-in for committing if needed)
-.env*
+# ─── OS / Editor junk ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.pem
+.vscode/settings.json
+.vscode/launch.json
 
-# vercel
+# ─── Deployment ──────────────────────────────────────────────────────────────
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-node_modules
+# ─── Scratch / Temporary / Dev-only files ────────────────────────────────────
+scratch.html
+scratch_prisma_test.js
+download_images.js
+temp_temp.png
+*.tmp
+*.bak
 
-/src/generated/prisma
+# ─── AI Agent / Internal metadata (not relevant to contributors) ─────────────
+AGENTS.md
+CLAUDE.md
